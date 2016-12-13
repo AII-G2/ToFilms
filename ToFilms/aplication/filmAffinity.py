@@ -50,8 +50,10 @@ def extraer_peliculas(titulo, director, anyo):
                 poster = p.find("div","mc-poster").img.get('src')
                 rating = p.find("div", "mr-rating").find("div","avgrat-box").string
                 nvotos = p.find("div", "mr-rating").find("div","ratcount-box").contents[0].string
-                extraer_info_peliculas(titulo, link, poster, rating, nvotos)
+                info_peliculas = extraer_info_peliculas(titulo, link, poster, rating, nvotos)
                 break
+
+    return info_peliculas
 
 def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
     def extraer_lista(file):
@@ -75,20 +77,49 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
     if l:
         soup = BeautifulSoup(l, 'html.parser')
         info_pelicula = soup.find("div", "z-movie").find("div", {"id": "left-column"}).find("dl", "movie-info")
-        for p in info_pelicula:
-            print p
-        print "Fecha: "+info_pelicula.find("dd", {"itemprop": "datePublished"}).string
-        print "Duracion: "+info_pelicula.find("dd", {"itemprop": "duration"}).string
-        print "Pais: "+info_pelicula.find("span", {"id": "country-img"}).img.get('title')
+        actores = ""
+        director = ""
+        fotografia = ""
+        guion = ""
+        musica = ""
+        productora = ""
+        # for p in info_pelicula:
+        #     print p
+        fecha = info_pelicula.find("dd", {"itemprop": "datePublished"}).string
+        print "Fecha: "+fecha
+        duracion = info_pelicula.find("dd", {"itemprop": "duration"}).string
+        print "Duracion: "+duracion
+        pais = info_pelicula.find("span", {"id": "country-img"}).img.get('title')
+        print "Pais: "+pais
         for d in info_pelicula.find("dd", "directors").findAll("a"):
-            print "Director: "+d.get('title')
-        print "Guion: "
-        print "Musica: "
-        print "Fotografia: "
-        print "Reparto: "
-        print "Productora: "
-        print "Género: "+info_pelicula.find("span", {"itemprop": "genre"}).a.string
-        print "Sipnosis: "+info_pelicula.find("dd", {"itemprop": "description"}).string
+            director = director + d.get('title') + ", "
+        director = director[0:len(director) - 2]
+        print "Director: " + director
+        for g in info_pelicula.findAll("div", "credits")[0]:
+            if len(re.findall(r'<span>(.*)</span>', str(g)))>0:
+                guion = guion+" "+re.findall(r'<span>(.*)</span>', str(g))[0].replace("</span>","")
+        print "Guion: "+guion
+        for m in info_pelicula.findAll("div", "credits")[1]:
+            if len(re.findall(r'<span>(.*)</span>', str(m)))>0:
+                musica = musica+" "+re.findall(r'<span>(.*)</span>', str(m))[0].replace("</span>","")
+        print "Musica: "+musica
+        for f in info_pelicula.findAll("div", "credits")[2]:
+            if len(re.findall(r'<span>(.*)</span>', str(f)))>0:
+                fotografia = fotografia+" "+re.findall(r'<span>(.*)</span>', str(f))[0].replace("</span>","")
+        print "Fotografia: "+fotografia
+        for a in info_pelicula.findAll("span", {"itemprop": "name"}):
+            actores = actores+a.string+", "
+        actores = actores[0:len(actores)-2]
+        print "Reparto: "+actores
+        for p in info_pelicula.findAll("div", "credits")[3]:
+            if len(re.findall(r'<span>(.*)</span>', str(p)))>0:
+                productora = productora+" "+re.findall(r'<span>(.*)</span>', str(p))[0].replace("</span>","")
+        print "Productora: "+productora
+        genero = info_pelicula.find("span", {"itemprop": "genre"}).a.string
+        print "Género: "+genero
+        sipnosis = info_pelicula.find("dd", {"itemprop": "description"}).string
+        print "Sipnosis: "+sipnosis
 
+    return [titulo, poster, rating, nvotos, fecha, duracion, pais, director, guion, musica, fotografia, actores, productora, genero, sipnosis]
 
-extraer_peliculas("Titanic", "James Cameron", "1997")
+print extraer_peliculas("Titanic", "James Cameron", "1997")
