@@ -50,7 +50,7 @@ def extraer_peliculas(titulo, director, anyo):
                 poster = p.find("div","mc-poster").img.get('src')
                 rating = p.find("div", "mr-rating").find("div","avgrat-box").string
                 nvotos = p.find("div", "mr-rating").find("div","ratcount-box").contents[0].string
-                extraer_info_peliculas(link, poster, rating, nvotos)
+                extraer_info_peliculas(titulo, link, poster, rating, nvotos)
                 break
 
 def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
@@ -74,18 +74,21 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
         l = extraer_lista(fichero)
     if l:
         soup = BeautifulSoup(l, 'html.parser')
-        info_pelicula = soup.find("div", "z-movie").find("div", { "id" : "left-column" }).find("dl", "movie-info")
-        print "Fecha: "
-        print "Duracion: "
-        print "Pais: "
-        print "Director: "
+        info_pelicula = soup.find("div", "z-movie").find("div", {"id": "left-column"}).find("dl", "movie-info")
+        for p in info_pelicula:
+            print p
+        print "Fecha: "+info_pelicula.find("dd", {"itemprop": "datePublished"}).string
+        print "Duracion: "+info_pelicula.find("dd", {"itemprop": "duration"}).string
+        print "Pais: "+info_pelicula.find("span", {"id": "country-img"}).img.get('title')
+        for d in info_pelicula.find("dd", "directors").findAll("a"):
+            print "Director: "+d.get('title')
         print "Guion: "
         print "Musica: "
         print "Fotografia: "
         print "Reparto: "
         print "Productora: "
-        print "Género: "
-        print "Sipnosis: "
+        print "Género: "+info_pelicula.find("span", {"itemprop": "genre"}).a.string
+        print "Sipnosis: "+info_pelicula.find("dd", {"itemprop": "description"}).string
 
 
 extraer_peliculas("Titanic", "James Cameron", "1997")
