@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Búsqueda avanzada - FilmAffinity</title>
+<meta charset="UTF-8">
+<meta name="description" content="Filmaffinity, tu página personalizada de votación y recomendación de películas y series">
+<meta property="og:site_name" content="FilmAffinity">
+<link rel="canonical" href="http://www.filmaffinity.com/es/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link href="/style/adv_search.1447153791.css" rel="stylesheet" type="text/css">
+<link href="/style/main3.1480688202.css" rel="stylesheet" type="text/css">
+<link href="/style/history.1447153791.css" rel="stylesheet" type="text/css">
+<link href="/style/moviecards3.1477567612.css" rel="stylesheet" type="text/css">
+<link href="/style/fa-awesome.1477474791.css" rel="stylesheet" type="text/css">
+<link href="/style/fa-icons.1463061770.css" rel="stylesheet" type="text/css">
+<link href="/style/magic-check.min.1463561312.css" rel="stylesheet" type="text/css">
+<link href="/style/pagetop.1478850509.css" rel="stylesheet" type="text/css">
+<link href="/style/jquery/fa-ui-theme/jquery-ui.min.1447153793.css" rel="stylesheet" type="text/css">
+<link href="/style/jquery/fa-ui-theme/jquery-ui.structure.min.1447153793.css" rel="stylesheet" type="text/css">
+<link href="/style/jquery/fa-ui-theme/jquery-ui.theme.min.1447153793.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/local_es.1447153785.js"></script>
+<script type="text/javascript" src="/js/crc32.1447153785.js"></script>
+<script type="text/javascript" src="/js/translate-context.1449147316.js"></script>
+<script type="text/javascript" src="/js/locale/texts-es_ES.1474903071.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery-1.10.2.min.1447153785.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery-migrate-1.2.1.1447153785.js"></script>
+<script type="text/javascript" src="/js/jquery/ui/jquery-ui-1.11.1.custom.min.1447153787.js"></script>
+<script type="text/javascript" src="/js/jquery/plugin/jquery.cookie.1447153786.js"></script>
+<script type="text/javascript" src="/js/jquery/plugin/info-cookies.1447153786.js"></script>
+<script type="text/javascript" src="/js/ads.1461926717.js"></script>
+<script type="text/javascript" src="/js/main.1477404795.js"></script>
+<script type="text/javascript" src="/js/pagetop.1480070847.js"></script>
+<script type="text/javascript" src="/js/z-index-fix.1447153785.js"></script>
+<script type="text/javascript" src="/js/fa-lists-tip.1474895807.js"></script>
+
+<link rel="alternate" href="http://www.filmaffinity.com/es/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997" hreflang="es">
+<link rel="alternate" href="http://www.filmaffinity.com/en/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997" hreflang="en">
+<link rel="alternate" href="http://www.filmaffinity.com/mx/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997" hreflang="es-MX">
+<link rel="alternate" href="http://www.filmaffinity.com/ar/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997" hreflang="es-AR">
+<link rel="alternate" href="http://www.filmaffinity.com/cl/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997" hreflang="es-CL">
+<link rel="alternate" href="http://www.filmaffinity.com/co/advsearch.php?stext=Titanic&stype[]=title&fromyear=1997&toyear=1997" hreflang="es-CO">
+
+
+
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+
+
+
+<script type='text/javascript'>
+    googletag.cmd.push(function() {
+
+            googletag.defineSlot('/5555/adconion.filmaffinity.es/buscador', [[728, 90], [980, 90], [980, 200]], 'div-gpt-ad-1454664445572-0').addService(googletag.pubads());
+            googletag.defineOutOfPageSlot('/5555/adconion.filmaffinity.es/buscador', 'div-gpt-ad-1454664445572-0-oop').addService(googletag.pubads());
+            googletag.defineSlot('/5555/adconion.filmaffinity.es/buscador', [[300, 250], [300, 600]], 'div-gpt-ad-1454664516281-0').addService(googletag.pubads());
+            googletag.defineSlot('/5555/adconion.filmaffinity.es/buscadorBTF', [300, 250], 'div-gpt-ad-1454664586070-0').addService(googletag.pubads());
+
+
+
+    googletag.enableServices();
+});
+</script>
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "13181121" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=13181121&cv=2.0&cj=1" />
+</noscript>
+<script>$(function(){sendpv("42196441da342915cfd9b1e3ee1a0a36");});</script>
+</head>
+<body>
+<div style="width: 4px; height: 4px; background: #91b1c0; position: absolute; top: 70px; right: 10px;"></div>
+<div id="page-header">
+    <div id="header-top">
+        <div class="cpanel top-wrapper">
+            <div id="logo-container">
+                <a href="/es/main.html">
+                    <img alt="logo" src="/images/logo4.png">
+                    <div class="logo-siteloc">España</div>
+                </a>
+            </div><!-- logo-container -->
+
+            <div id="topsearch">
+                <form action="/es/search.php" method="get" accept-charset="UTF-8">
+                    <input id="top-search-input" type="text" name="stext" size="20" value="Titanic">
+                        <label for="button-search">
+                            <i class="fa fa-search"></i>
+                        </label>
+                        <input type="submit" id="button-search" value="&nbsp;">
+                </form>
+                <div class="advsearch"><a href="/es/advsearch.php">Búsqueda avanzada <i class="fa fa-angle-double-right"></i></a></div>
+            </div><!-- topsearch -->
+
+            <div id="user-login-container">
+                <div id="login-register">
+                    <a href="/es/login.php">Iniciar sesión</a> / <a href="/es/register.php">Registrarse</a>
+                </div>
+
+                <div class="user-menu-wr">
+<ul>
+    <li>
+        <a href="/es/userratings.php?user_id=">
+            <span class="ic-w"><i class="fa fa-ratings-fa"></i></span>
+                Mis votaciones        </a>
+    </li>
+    <li>
+        <a href="/es/myreviews.php">
+            <span class="ic-w"><i class="fa fa-reviews-fa"></i></span>
+            Críticas        </a>
+    </li>
+    <li>
+        <a href="/es/mylists.php">
+            <span class="ic-w"><i class="fa fa-list"></i></span>
+            Listas        </a>
+    </li>
+    <li>
+        <a href="/es/myfriends.php">
+            <span class="ic-w"><i class="fa fa fa-friends-fa"></i></span>
+            Amigos / Grupos        </a>
+    </li>
+    <li>
+        <a href="/es/soulmates.php">
+            <span class="ic-w"><i class="fa fa-soulmates-fa"></i></span>
+            Almas gemelas        </a>
+    </li>
+    <li>
+        <a href="/es/smsrec.php">
+            <span class="ic-w"><i class="fa fa-heart"></i></span>
+                Recomendaciones        </a>
+    </li>
+    <li class="user-prof-link">
+        <a href="/es/mydata.php">
+            <span class="ic-w"><i class="fa fa-address-card-o"></i></span>
+                Datos personales        </a>
+    </li>
+        <li>
+            <a href="/es/user-fav-theaters.php">
+                <span class="ic-w"><i class="fa fa-ticket"></i></span>
+                Cines favoritos            </a>
+        </li>
+        <li>
+            <a href="/es/tours.php">
+                <span class="ic-w"><i class="fa fa-ratings-fa"></i></span>
+                Votar los tours            </a>
+        </li>
+        <li class="lg-out-li">
+            <a href="#" class="sign-out">
+                Cerrar sesión            </a>
+        </li>
+</ul>
+                </div>
+            </div><!-- user-login -container -->
+        </div>
+    </div>
+    <div id="header-bottom" >
+        <div class="cpanel news-wrapper">
+
+<style>
+#awardsmenu .sep:last-child {display: none;}
+</style>
+<ul id="awardsmenu">
+            <li><a href="/es/awards.php?award_id=goldenglobes&year=2017">Nominaciones Globos de Oro 2017</a></li><li class="sep">|</li>
+            <li><a href="/es/awards.php?award_id=european&year=2016">Cine Europeo</a></li><li class="sep">|</li>
+            <li><a href="/es/awards.php?award_id=nbr&year=2016">NBR</a></li><li class="sep">|</li>
+            <li><a href="/es/awards.php?award_id=nyfcc&year=2016">NY</a></li><li class="sep">|</li>
+            <li><a href="/es/awards.php?award_id=lafca&year=2016">LA</a></li><li class="sep">|</li>
+            <li><a href="/es/topgen.php">Top FA</a></li><li class="sep">|</li>
+            <li><a href="/es/oscar_data.php">Oscars</a></li><li class="sep">|</li>
+            <li><a href="/es/all_awards.php">Todos los Premios</a></li><li class="sep">|</li>
+</ul>
+
+
+            <div id="trmenu">
+                <div id="fb-top-logo" class="social-logo"><a target="_BLANK" title="Sigue a FA en Facebook (150.000 followers)" href="http://www.facebook.com/Filmaffinity"><i class="fa fa-facebook"></i></a></div>
+                <div id="tw-top-logo" class="social-logo"><a target="_BLANK" title="Sigue a FA en Twitter (30.000 followers)" href="http://twitter.com/Filmaffinity"><i class="fa fa-twitter"></i></a></div>
+                <div id="in-top-logo" class="social-logo"><a target="_BLANK" title="Sigue a FA en Instagam (22.000 followers)" href="https://www.instagram.com/filmaffinity/"><i class="fa fa-instagram"></i></a></div>
+            </div>
+
+        <div class="version-selector">
+            <ul class="version">
+                <li data-version="es" class="fixed" title="Cambiar de versión">España <i class="fa fa-chevron-down"></i></li>
+                <li data-version="en">USA | UK</li>
+                <li data-version="mx">México</li>
+                <li data-version="ar">Argentina</li>
+                <li data-version="cl">Chile</li>
+                <li data-version="co">Colombia</li>
+                <li class="info" title="FilmAffinity se internacionaliza! Más información aquí"><i class="fa fa-question-circle"></i></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="cpanel adver-wrapper">
+<div id="top-ad" style="min-height: 90px;">
+    <div class="ad-top-banner sw-ad">
+
+
+
+            <!--980x200, 980x90, 7289x90  FILMAFFINITY.ES#ES000023/buscador -->
+            <div id='div-gpt-ad-1454664445572-0'>
+            <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1454664445572-0'); });
+            </script>
+            </div>
+            <div id='div-gpt-ad-1454664445572-0-oop' style='height:0px;'>
+            <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1454664445572-0-oop'); });
+            </script>
+            </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div id="info-cookie">
+    Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso que hacemos de las cookies. <a class="fa-button-cookie cookies-y" href="#">Conforme</a> <a href="/es/cookies_info.php">Más información</a>
+</div>
+<div id="top-anch">
+    <a title="Ir arriba" href="#header-top">
+        <img alt="arrow" src="http://www.filmaffinity.com/images/arrow-up2.png">
+    </a>
+</div>
+<div class="cpanel">
+  <table id="main-content-table">
+    <tr>
+      <td id="mt-left-cell">
+        <div id="lsmenu">
+<div class="cat-container">
+<div class="lsmheader">Usuarios</div>
+<ul>
+<li ><a  href="/es/tours.php">Votar los tours</a></li><li ><a class="sign-in"  href="/es/login.php">Iniciar sesión</a></li><li ><a  href="/es/register.php">Registrarse</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">España</div>
+<ul>
+<li ><a  href="/es/cat_new_th_es.html">Películas en cartelera</a></li><li ><a  href="/es/cityTheaters.php">Cines España</a></li><li ><a  href="/es/rdcat.php?id=upc_th_es">Próximos estrenos</a></li><li ><a  href="/es/cat_new_sa_es.html">Estrenos DVD venta</a></li><li ><a  href="/es/rdcat.php?id=upc_sa_es">Próximos DVD venta</a></li><li ><a  href="/es/cat_new_re_es.html">Ya para alquilar</a></li><li ><a  href="/es/rdcat.php?id=upc_re_es">Próximamente alquiler</a></li><li ><a  href="/es/vod_dvd.php">Video on Demand</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">USA - UK - FR</div>
+<ul>
+<li ><a  href="/es/cat_new_th_us.html">Estrenos USA</a></li><li ><a  href="/es/cat_new_th_uk.html">Estrenos Reino Unido</a></li><li ><a  href="/es/cat_new_th_fr.html">Estrenos Francia</a></li><li ><a  href="/es/cat_DVD_VID_US.html">DVD/Video USA</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">Secciones</div>
+<ul>
+<li ><a  href="/es/boxoffice.php">Taquilla</a></li><li ><a  href="/es/trailers.php">Trailers</a></li><li ><a  href="/es/latestevideos.php">Últimos trailers</a></li><li ><a  href="/es/latestreviews.php">Últimas críticas</a></li><li ><a  href="/es/allfilms.html">Todas las películas</a></li><li ><a  href="/es/topics.php">Películas por temas</a></li><li ><a  href="/es/movie-groups-all.php">Sagas & Franquicias</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">Series de TV</div>
+<ul>
+<li ><a  href="/es/cat_current_tv.html">Series de actualidad</a></li><li ><a  href="/es/topgen.php?genre=TV_SE&country=&fromyear=&toyear=&nodoc">Top series</a></li><li ><a  href="/es/tour.php?idtour=26">Vota Series de TV</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">TOPs</div>
+<ul>
+<li ><a  href="/es/topgen.php">Top Filmaffinity</a></li><li ><a  href="/es/best_tops.php">Lo mejor del TOP</a></li><li ><a  href="/es/topcat_new_th_es.html">Top Estrenos</a></li><li ><a  href="/es/topcat_new_sa_es.html">Top Estrenos DVD</a></li><li ><a  href="/es/listsrank.php">Ranking de listas</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">Premios</div>
+<ul>
+<li ><a  href="/es/all_awards.php">Todos los premios</a></li><li ><a  href="/es/awards.php?award_id=academy_awards&year=2016">Oscars 2016</a></li><li ><a  href="/es/oscar_data.php">Todos los Oscar</a></li><li ><a  href="/es/best_2016.php">Resumen 2016</a></li></ul></div>
+<div class="cat-container">
+<div class="lsmheader">Información</div>
+<ul>
+<li ><a  href="/es/site-guide.php">Acerca de FA</a></li><li ><a  href="/es/contact_us.php">Contacto</a></li></ul></div>
+</div>
+      </td>
+      <td>
+        <div id="mt-content-cell">
+<div class="fa-shadow float-right"><div class="adv-no-styles">
+    <div class="ad-300">
+
+
+            <!-- 300x600, 300x250 FILMAFFINITY.ES#ES000023/buscador -->
+            <div id='div-gpt-ad-1454664516281-0'>
+            <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1454664516281-0'); });
+            </script>
+            </div>
+
+
+    </div>
+</div>
+
+
+</div>
+<div id="main-adv-search-wrapper">
+    <div class="fa-shadow" id="adv-search-container">
+        <div id="adv-search-main-title"><b>BUSCADOR AVANZADO</b><span> (Buscará en los campos que selecciones)</span></div>
+        <div id="adv-search-filter-container">
+            <form action="/es/advsearch.php">
+            <div id="text-option-container" class="form-section">
+                <div class="title-filter">
+                    Texto:                </div>
+                <div>
+                    <input type="text" name="stext" value="Titanic" size="54"></div>
+                <div>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="title" checked>Título</span>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="director" >Director</span>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="cast" >Reparto</span>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="script" >Guión</span>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="photo" >Fotografía</span>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="music" >Música</span>
+                    <span class="adv-search-option"><input type="checkbox" name="stype[]" value="producer" >Productora</span>
+                </div>
+            </div>
+            <div id="genre-country-container" class="form-section">
+                <div id="country-container">
+                    <div class="title-filter">País:</div>
+                            <div>
+
+<select name="country" id="country">
+    <option value="">Todos los países</option>
+        <option value="AF"  >Afganistán</option>
+        <option value="AL"  >Albania</option>
+        <option value="DE"  >Alemania</option>
+        <option value="FD"  >Alemania del Este (RDA)</option>
+        <option value="FF"  >Alemania del Oeste (RFA)</option>
+        <option value="AD"  >Andorra</option>
+        <option value="AO"  >Angola</option>
+        <option value="AG"  >Antigua y Barbuda</option>
+        <option value="SA"  >Arabia Saudí</option>
+        <option value="DZ"  >Argelia</option>
+        <option value="AR"  >Argentina</option>
+        <option value="AM"  >Armenia</option>
+        <option value="AU"  >Australia</option>
+        <option value="AT"  >Austria</option>
+        <option value="AZ"  >Azerbaijan</option>
+        <option value="BS"  >Bahamas</option>
+        <option value="BH"  >Bahrein</option>
+        <option value="BD"  >Bangladesh</option>
+        <option value="BB"  >Barbados</option>
+        <option value="BE"  >Bélgica</option>
+        <option value="BZ"  >Belize</option>
+        <option value="BJ"  >Benín</option>
+        <option value="BY"  >Bielorusia</option>
+        <option value="BO"  >Bolivia</option>
+        <option value="BA"  >Bosnia y Herzegovina</option>
+        <option value="BW"  >Botswana</option>
+        <option value="BR"  >Brasil</option>
+        <option value="BN"  >Brunei</option>
+        <option value="BG"  >Bulgaria</option>
+        <option value="BF"  >Burkina Faso</option>
+        <option value="BI"  >Burundi</option>
+        <option value="BT"  >Bután</option>
+        <option value="CV"  >Cabo Verde</option>
+        <option value="KH"  >Camboya</option>
+        <option value="CM"  >Camerún</option>
+        <option value="CA"  >Canadá</option>
+        <option value="TD"  >Chad</option>
+        <option value="ZX"  >Checoslovaquia</option>
+        <option value="CL"  >Chile</option>
+        <option value="CN"  >China</option>
+        <option value="CY"  >Chipre</option>
+        <option value="CO"  >Colombia</option>
+        <option value="KM"  >Comores</option>
+        <option value="CG"  >Congo</option>
+        <option value="KK"  >Corea</option>
+        <option value="KP"  >Corea del Norte</option>
+        <option value="KR"  >Corea del Sur</option>
+        <option value="CI"  >Costa de Marfil</option>
+        <option value="CR"  >Costa Rica</option>
+        <option value="HR"  >Croacia</option>
+        <option value="CU"  >Cuba</option>
+        <option value="DK"  >Dinamarca</option>
+        <option value="DM"  >Dominica</option>
+        <option value="EC"  >Ecuador</option>
+        <option value="EG"  >Egipto</option>
+        <option value="SV"  >El Salvador</option>
+        <option value="AE"  >Emiratos Árabes</option>
+        <option value="ER"  >Eritrea</option>
+        <option value="SK"  >Eslovaquia</option>
+        <option value="SI"  >Eslovenia</option>
+        <option value="ES"  >España</option>
+        <option value="US"  >Estados Unidos</option>
+        <option value="EE"  >Estonia</option>
+        <option value="ET"  >Etiopía</option>
+        <option value="FJ"  >Fidji</option>
+        <option value="PH"  >Filipinas</option>
+        <option value="FI"  >Finlandia</option>
+        <option value="FR"  >Francia</option>
+        <option value="GA"  >Gabón</option>
+        <option value="GM"  >Gambia</option>
+        <option value="GE"  >Georgia</option>
+        <option value="GH"  >Ghana</option>
+        <option value="GD"  >Granada</option>
+        <option value="GR"  >Grecia</option>
+        <option value="GL"  >Groenlandia</option>
+        <option value="GT"  >Guatemala</option>
+        <option value="GN"  >Guinea</option>
+        <option value="GW"  >Guinea Bissau</option>
+        <option value="GQ"  >Guinea Ecuatorial</option>
+        <option value="GY"  >Guyana</option>
+        <option value="HT"  >Haití</option>
+        <option value="HN"  >Honduras</option>
+        <option value="HK"  >Hong Kong</option>
+        <option value="HU"  >Hungría</option>
+        <option value="IN"  >India</option>
+        <option value="ID"  >Indonesia</option>
+        <option value="IQ"  >Irak</option>
+        <option value="IR"  >Irán</option>
+        <option value="IE"  >Irlanda</option>
+        <option value="IS"  >Islandia</option>
+        <option value="IL"  >Israel</option>
+        <option value="IT"  >Italia</option>
+        <option value="JM"  >Jamaica</option>
+        <option value="JP"  >Japón</option>
+        <option value="JO"  >Jordania</option>
+        <option value="KZ"  >Kazajstán</option>
+        <option value="KE"  >Kenia</option>
+        <option value="KG"  >Kirguistán</option>
+        <option value="KO"  >Kosovo</option>
+        <option value="KW"  >Kuwait</option>
+        <option value="LA"  >Laos</option>
+        <option value="LS"  >Lesotho</option>
+        <option value="LE"  >Letonia</option>
+        <option value="LB"  >Líbano</option>
+        <option value="LR"  >Liberia</option>
+        <option value="LY"  >Libia</option>
+        <option value="LI"  >Liechtenstein</option>
+        <option value="LT"  >Lituania</option>
+        <option value="LU"  >Luxemburgo</option>
+        <option value="MO"  >Macao</option>
+        <option value="MK"  >Macedonia</option>
+        <option value="MG"  >Madagascar</option>
+        <option value="MY"  >Malasia</option>
+        <option value="MW"  >Malawi</option>
+        <option value="MV"  >Maldivas</option>
+        <option value="ML"  >Mali</option>
+        <option value="MT"  >Malta</option>
+        <option value="MA"  >Marruecos</option>
+        <option value="MH"  >Marshall (Islas)</option>
+        <option value="MU"  >Mauricio (Isla)</option>
+        <option value="MR"  >Mauritania</option>
+        <option value="MX"  >México</option>
+        <option value="FM"  >Micronesia</option>
+        <option value="MD"  >Moldavia</option>
+        <option value="MC"  >Mónaco</option>
+        <option value="MN"  >Mongolia</option>
+        <option value="ME"  >Montenegro</option>
+        <option value="MZ"  >Mozambique</option>
+        <option value="MM"  >Myanmar - Birmania</option>
+        <option value="NA"  >Namibia</option>
+        <option value="NP"  >Nepal</option>
+        <option value="NI"  >Nicaragua</option>
+        <option value="NE"  >Níger</option>
+        <option value="NG"  >Nigeria</option>
+        <option value="NO"  >Noruega</option>
+        <option value="NZ"  >Nueva Zelanda</option>
+        <option value="OM"  >Omán</option>
+        <option value="NL"  >Países Bajos (Holanda)</option>
+        <option value="PW"  >Palau</option>
+        <option value="PS"  >Palestina</option>
+        <option value="PA"  >Panamá</option>
+        <option value="PG"  >Papuasia Nueva Guinea</option>
+        <option value="PK"  >Paquistán</option>
+        <option value="PY"  >Paraguay</option>
+        <option value="PE"  >Perú</option>
+        <option value="PL"  >Polonia</option>
+        <option value="PT"  >Portugal</option>
+        <option value="PR"  >Puerto Rico</option>
+        <option value="QA"  >Qatar</option>
+        <option value="GB"  >Reino Unido</option>
+        <option value="EH"  >Rep. Árabe Saharaui Democrática</option>
+        <option value="CF"  >Rep. Centroafricana</option>
+        <option value="DO"  >Rep. Dominicana</option>
+        <option value="CZ"  >República Checa</option>
+        <option value="CD"  >República del Congo</option>
+        <option value="RW"  >Ruanda</option>
+        <option value="RO"  >Rumanía</option>
+        <option value="RU"  >Rusia</option>
+        <option value="WS"  >Samoa</option>
+        <option value="SM"  >San Marino</option>
+        <option value="ST"  >Santo Tomé y Príncipe</option>
+        <option value="SN"  >Senegal</option>
+        <option value="RS"  >Serbia</option>
+        <option value="RR"  >Serbia y Montenegro</option>
+        <option value="SC"  >Seychelles</option>
+        <option value="SL"  >Sierra Leona</option>
+        <option value="SG"  >Singapur</option>
+        <option value="SY"  >Siria</option>
+        <option value="SO"  >Somalia</option>
+        <option value="LK"  >Sri Lanka</option>
+        <option value="ZA"  >Sudáfrica</option>
+        <option value="SD"  >Sudán</option>
+        <option value="SS"  >Sudán del Sur</option>
+        <option value="SE"  >Suecia</option>
+        <option value="CH"  >Suiza</option>
+        <option value="SR"  >Surinam</option>
+        <option value="SZ"  >Swazilandia</option>
+        <option value="TH"  >Tailandia</option>
+        <option value="TW"  >Taiwán</option>
+        <option value="TJ"  >Tajikistan</option>
+        <option value="TZ"  >Tanzania</option>
+        <option value="TL"  >Timor Oriental</option>
+        <option value="TG"  >Togo</option>
+        <option value="TT"  >Trinidad y Tobago</option>
+        <option value="TN"  >Túnez</option>
+        <option value="TM"  >Turkmenistán</option>
+        <option value="TR"  >Turquía</option>
+        <option value="UA"  >Ucrania</option>
+        <option value="UG"  >Uganda</option>
+        <option value="ZY"  >Unión Soviética (URSS)</option>
+        <option value="UY"  >Uruguay</option>
+        <option value="UZ"  >Uzbekistan</option>
+        <option value="VU"  >Vanuatu</option>
+        <option value="VE"  >Venezuela</option>
+        <option value="VN"  >Vietnam</option>
+        <option value="YE"  >Yemen</option>
+        <option value="YU"  >Yugoslavia</option>
+        <option value="ZM"  >Zambia</option>
+        <option value="ZW"  >Zimbabwe</option>
+</select>
+</div>
+                </div>
+                <div id="genre-container">
+                    <div class="title-filter">Género:</div>
+                              <div><select name="genre"><option value="">-Todos los géneros-</option><option value="AC">Acción</option>
+<option value="AN">Animación</option>
+<option value="AV">Aventuras</option>
+<option value="BE">Bélico</option>
+<option value="C-F">Ciencia ficción</option>
+<option value="F-N">Cine negro</option>
+<option value="CO">Comedia</option>
+<option value="DESC">Desconocido</option>
+<option value="DO">Documental</option>
+<option value="DR">Drama</option>
+<option value="FAN">Fantástico</option>
+<option value="INF">Infantil</option>
+<option value="INT">Intriga</option>
+<option value="MU">Musical</option>
+<option value="RO">Romance</option>
+<option value="TV_SE">Serie de TV</option>
+<option value="TE">Terror</option>
+<option value="TH">Thriller</option>
+<option value="WE">Western</option>
+</select></div>
+                </div>
+            </div>
+            <div id="year-container" class="form-section">
+                <div>
+                    <div class="title-filter">Año:</div>
+                        <div id="from-year-container"> desde <select name="fromyear"><option value="">- - - -</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option selected>1997</option><option>1996</option><option>1995</option><option>1994</option><option>1993</option><option>1992</option><option>1991</option><option>1990</option><option>1989</option><option>1988</option><option>1987</option><option>1986</option><option>1985</option><option>1984</option><option>1983</option><option>1982</option><option>1981</option><option>1980</option><option>1979</option><option>1978</option><option>1977</option><option>1976</option><option>1975</option><option>1974</option><option>1973</option><option>1972</option><option>1971</option><option>1970</option><option>1969</option><option>1968</option><option>1967</option><option>1966</option><option>1965</option><option>1964</option><option>1963</option><option>1962</option><option>1961</option><option>1960</option><option>1959</option><option>1958</option><option>1957</option><option>1956</option><option>1955</option><option>1954</option><option>1953</option><option>1952</option><option>1951</option><option>1950</option><option>1949</option><option>1948</option><option>1947</option><option>1946</option><option>1945</option><option>1944</option><option>1943</option><option>1942</option><option>1941</option><option>1940</option><option>1939</option><option>1938</option><option>1937</option><option>1936</option><option>1935</option><option>1934</option><option>1933</option><option>1932</option><option>1931</option><option>1930</option><option>1929</option><option>1928</option><option>1927</option><option>1926</option><option>1925</option><option>1924</option><option>1923</option><option>1922</option><option>1921</option><option>1920</option><option>1919</option><option>1918</option><option>1917</option><option>1916</option><option>1915</option><option>1914</option><option>1913</option><option>1912</option><option>1911</option><option>1910</option><option>1909</option><option>1908</option><option>1907</option><option>1906</option><option>1905</option><option>1904</option><option>1903</option><option>1902</option><option>1901</option><option>1900</option></select></div>
+                        <div id="to-year-container"> hasta <select name="toyear"><option value="">- - - -</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option selected>1997</option><option>1996</option><option>1995</option><option>1994</option><option>1993</option><option>1992</option><option>1991</option><option>1990</option><option>1989</option><option>1988</option><option>1987</option><option>1986</option><option>1985</option><option>1984</option><option>1983</option><option>1982</option><option>1981</option><option>1980</option><option>1979</option><option>1978</option><option>1977</option><option>1976</option><option>1975</option><option>1974</option><option>1973</option><option>1972</option><option>1971</option><option>1970</option><option>1969</option><option>1968</option><option>1967</option><option>1966</option><option>1965</option><option>1964</option><option>1963</option><option>1962</option><option>1961</option><option>1960</option><option>1959</option><option>1958</option><option>1957</option><option>1956</option><option>1955</option><option>1954</option><option>1953</option><option>1952</option><option>1951</option><option>1950</option><option>1949</option><option>1948</option><option>1947</option><option>1946</option><option>1945</option><option>1944</option><option>1943</option><option>1942</option><option>1941</option><option>1940</option><option>1939</option><option>1938</option><option>1937</option><option>1936</option><option>1935</option><option>1934</option><option>1933</option><option>1932</option><option>1931</option><option>1930</option><option>1929</option><option>1928</option><option>1927</option><option>1926</option><option>1925</option><option>1924</option><option>1923</option><option>1922</option><option>1921</option><option>1920</option><option>1919</option><option>1918</option><option>1917</option><option>1916</option><option>1915</option><option>1914</option><option>1913</option><option>1912</option><option>1911</option><option>1910</option><option>1909</option><option>1908</option><option>1907</option><option>1906</option><option>1905</option><option>1904</option><option>1903</option><option>1902</option><option>1901</option><option>1900</option></select></div>
+                </div>
+            </div>
+            <div id="adv-search-button-container">
+                <button id="adv-search-button" type="submit" value="buscar">Buscar</button>
+            </div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="adv-search-result-wrapper">
+    <div id="adv-search-pager-info">
+
+        <div class="adv-search-page-info">&nbsp;<div class="float-right"><b>3</b> resultados</div></div>
+        
+    </div>
+    <div class="fa-shadow adv-search-item">
+<div class="movie-card movie-card-1" data-movie-id="814379">
+    <div class="mc-poster">
+        <a title="Titanic" href="/es/film814379.html"><img width="100" height="" src="http://pics.filmaffinity.com/titanic-424537916-msmall.jpg"alt="Titanic"></a>
+    </div>
+    <div class="mc-info-container">
+        <div class="mc-actions">
+                </div>
+        <div class="mc-title"><a  href="/es/film814379.html" title="Titanic">Titanic</a> (1997) <img src="/imgs/countries/US.jpg" alt="Estados Unidos" title="Estados Unidos"></div>
+        <div class="mr-rating">
+            <div class="avgrat-box">6,8</div>
+            <div class="ratcount-box">168.268 <i class="fa fa fa-simple-user-o-fa"></i></div>
+        </div>
+        <div class="mc-director">
+            <div class="credits"><span class="nb"><a href="/es/search.php?stype=director&sn&stext=James%20Cameron" title="James Cameron">James Cameron</a></div>        </div>
+        <div class="mc-cast">
+            <div class="credits"><span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Leonardo%20DiCaprio" title="Leonardo DiCaprio">Leonardo DiCaprio</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Kate%20Winslet" title="Kate Winslet">Kate Winslet</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Billy%20Zane" title="Billy Zane">Billy Zane</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Kathy%20Bates" title="Kathy Bates">Kathy Bates</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Frances%20Fisher" title="Frances Fisher">Frances Fisher</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Gloria%20Stuart" title="Gloria Stuart">Gloria Stuart</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Bill%20Paxton" title="Bill Paxton">Bill Paxton</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Bernard%20Hill" title="Bernard Hill">Bernard Hill</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=David%20Warner" title="David Warner">David Warner</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Victor%20Garber" title="Victor Garber">Victor Garber</a>,</span> ...</div>        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="lists-box"></div>
+</div>
+
+
+    </div>
+    <div class="fa-shadow adv-search-item">
+<div class="movie-card movie-card-1" data-movie-id="248159">
+    <div class="mc-poster">
+        <a title="La camarera del Titanic" href="/es/film248159.html"><img width="100" height="" src="http://pics.filmaffinity.com/la_femme_de_chambre_du_titanic_la_camarera_del_titanic-496433163-msmall.jpg"alt="La camarera del Titanic"></a>
+    </div>
+    <div class="mc-info-container">
+        <div class="mc-actions">
+                </div>
+        <div class="mc-title"><a  href="/es/film248159.html" title="La camarera del Titanic">La camarera del Titanic</a> (1997) <img src="/imgs/countries/ES.jpg" alt="España" title="España"></div>
+        <div class="mr-rating">
+            <div class="avgrat-box">5,0</div>
+            <div class="ratcount-box">3.692 <i class="fa fa fa-simple-user-o-fa"></i></div>
+        </div>
+        <div class="mc-director">
+            <div class="credits"><span class="nb"><a href="/es/search.php?stype=director&sn&stext=Bigas%20Luna" title="Bigas Luna">Bigas Luna</a></div>        </div>
+        <div class="mc-cast">
+            <div class="credits"><span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Aitana%20S%C3%A1nchez-Gij%C3%B3n" title="Aitana Sánchez-Gijón">Aitana Sánchez-Gijón</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Olivier%20Mart%C3%ADnez" title="Olivier Martínez">Olivier Martínez</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Romane%20Bohringer" title="Romane Bohringer">Romane Bohringer</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Salvador%20Madrid" title="Salvador Madrid">Salvador Madrid</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Didier%20Bezace" title="Didier Bezace">Didier Bezace</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Aldo%20Maccione" title="Aldo Maccione">Aldo Maccione</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Jean-Marie%20Juan" title="Jean-Marie Juan">Jean-Marie Juan</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Arno%20Chevrier" title="Arno Chevrier">Arno Chevrier</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Marianne%20Groves" title="Marianne Groves">Marianne Groves</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Didier%20Benareau" title="Didier Benareau">Didier Benareau</a>,</span> ...</div>        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="lists-box"></div>
+</div>
+
+
+    </div>
+    <div class="fa-shadow adv-search-item">
+<div class="movie-card movie-card-1" data-movie-id="222212">
+    <div class="mc-poster">
+        <a title="Titanic: Anatomía de un desastre" href="/es/film222212.html"><img width="100" height="" src="http://pics.filmaffinity.com/titanic_anatomy_of_a_disaster-284237669-msmall.jpg"alt="Titanic: Anatomía de un desastre"></a>
+    </div>
+    <div class="mc-info-container">
+        <div class="mc-actions">
+                </div>
+        <div class="mc-title"><a  href="/es/film222212.html" title="Titanic: Anatomía de un desastre">Titanic: Anatomía de un desastre</a> (1997) <img src="/imgs/countries/US.jpg" alt="Estados Unidos" title="Estados Unidos"></div>
+        <div class="mr-rating">
+            <div class="avgrat-box">6,2</div>
+            <div class="ratcount-box">47 <i class="fa fa fa-simple-user-o-fa"></i></div>
+        </div>
+        <div class="mc-director">
+            <div class="credits"><span class="nb"><a href="/es/search.php?stype=director&sn&stext=Steve%20Burns" title="Steve Burns">Steve Burns</a></div>        </div>
+        <div class="mc-cast">
+            <div class="credits"><span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Documentary" title="Documentary">Documentary</a>,</span> <span class="nb"><a href="/es/search.php?stype=cast&sn&stext=Martin%20Sheen" title="Martin Sheen">Martin Sheen</a></div>        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="lists-box"></div>
+</div>
+
+
+    </div>
+        <div class="adv-search-page-info" style="padding: 0 5px"></div>
+</div>
+            <div id="adv-search-info">
+                Si no encuentras lo que buscas, inténtalo con el <a href="/es/globalsearch.php?cx=008177178803676006601%3Amrme5orikjy&cof=FORID%3A9&q=Titanic&ie=latin1">buscador global</a>            </div>
+        </div>
+              </td>
+    </tr>
+</table>
+</div>
+<div id="bpanel">
+<div style="text-align:center; padding: 10px">
+      <a href="/es/faq.php">Preguntas más frecuentes</a>
+    | <a href="/es/private.php" >Política de privacidad / condiciones de uso</a>
+    | <a href="http://m.filmaffinity.com/es/main.php"><strong>Ir a Versión MÓVIL</strong></a>
+</div>
+<div style="text-align:center; padding: 10px 2px">
+    <span class="subtext">© 2002-2016 Filmaffinity - Movieaffinity | Todos los derechos reservados</span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
