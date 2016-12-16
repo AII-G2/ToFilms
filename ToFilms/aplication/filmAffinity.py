@@ -1,5 +1,6 @@
 # encoding=utf8
 import sys
+import time
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -69,7 +70,10 @@ def extraer_peliculas(titulo, director, anyo):
                 link = "http://www.filmaffinity.com"+p.find("div", "mc-title").a.get('href')
                 poster = p.find("div","mc-poster").img.get('src')
                 rating = p.find("div", "mr-rating").find("div","avgrat-box").string
-                nvotos = p.find("div", "mr-rating").find("div","ratcount-box").contents[0].string
+                try:
+                    nvotos = p.find("div", "mr-rating").find("div","ratcount-box").contents[0].string
+                except:
+                    nvotos = ""
                 info_peliculas = extraer_info_peliculas(titulo, link, poster, rating, nvotos)
                 break
 
@@ -116,8 +120,11 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
                 idguion = idguion+idmusica+idfotografia+1
         fecha = info_pelicula.find("dd", {"itemprop": "datePublished"}).string
         #print "Fecha: "+fecha
-        duracion = info_pelicula.find("dd", {"itemprop": "duration"}).string
-        #print "Duracion: "+duracion
+        try:
+            duracion = info_pelicula.find("dd", {"itemprop": "duration"}).string
+            #print "Duracion: "+duracion
+        except:
+            duracion = ""
         pais = info_pelicula.find("span", {"id": "country-img"}).img.get('title')
         #print "Pais: "+pais
         for d in info_pelicula.find("dd", "directors").findAll("a"):
@@ -149,7 +156,10 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
             #print "Productora: "+productora
         genero = info_pelicula.find("span", {"itemprop": "genre"}).a.string
         #print "Género: "+genero
-        sipnosis = info_pelicula.find("dd", {"itemprop": "description"}).string
+        try:
+            sipnosis = info_pelicula.find("dd", {"itemprop": "description"}).string
+        except:
+            sipnosis = ""
         #print "Sipnosis: "+sipnosis
 
     return [titulo, poster, rating, nvotos, fecha, duracion, pais, director, guion, musica, fotografia, actores, productora, genero, sipnosis]
@@ -162,21 +172,31 @@ def extraer_lista(file):
     return l
 
 torrents = extraer_lista("../../ignoredFiles/torrents.txt")
-i = 0
+i = 349
 printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
 count = 0
-for t in torrents.splitlines():
+f = open("../../ignoredFiles/peliculas", "a")
+torrentsArray = torrents.splitlines()
+
+for t in range(349,len(torrentsArray)):
+    time.sleep(5)
     # print eval(t)
     # print eval(t)[0]
     # print eval(t)[4][3:].replace(".","")
     # print eval(t)[6][3:]
+    titulo = eval(torrentsArray[t])[0]
+    director = eval(torrentsArray[t])[4][3:].replace(".","")
+    anyo = eval(torrentsArray[t])[6][3:].replace(".","")
     try:
-        extraer_peliculas(eval(t)[0], eval(t)[4][3:].replace(".",""), eval(t)[6][3:].replace(".",""))
-    except Exception:
-        #print eval(t)[0]
+        extraccion = extraer_peliculas(titulo, director, anyo)
+        f.write(str(extraccion))
+        f.write("\n")
+    except UnboundLocalError:
+    #     #print eval(t)[0]
         count = count + 1
-        #print count
+    #     #print count
     printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
     i = i + 1
 
-print i
+f.close()
+print count
