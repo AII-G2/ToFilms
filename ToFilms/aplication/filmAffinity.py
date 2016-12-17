@@ -40,7 +40,7 @@ def extraer_peliculas(titulo, director, anyo):
             f = urllib.urlretrieve(url, file)
             return file
         except:
-            print  "Error al conectarse a la página"
+            print("Error al conectarse a la página")
             return None
 
     fichero = "pelicula"
@@ -199,4 +199,4 @@ for t in range(349,len(torrentsArray)):
     i = i + 1
 
 f.close()
-print count
+print(count)
