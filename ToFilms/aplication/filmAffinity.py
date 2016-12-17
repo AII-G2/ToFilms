@@ -131,10 +131,13 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
             director = director + d.get('title') + ", "
         director = director[0:len(director) - 2]
         #print "Director: " + director
-        for g in info_pelicula.findAll("div", "credits")[0]:
-            if len(re.findall(r'<span>(.*)</span>', str(g)))>0:
-                guion = guion+" "+re.findall(r'<span>(.*)</span>', str(g))[0].replace("</span>","")
-        #print "Guion: "+guion
+        try:
+            for g in info_pelicula.findAll("div", "credits")[0]:
+                if len(re.findall(r'<span>(.*)</span>', str(g)))>0:
+                    guion = guion+" "+re.findall(r'<span>(.*)</span>', str(g))[0].replace("</span>","")
+            #print "Guion: "+guion
+        except:
+            guion = ""
         if idmusica!=0:
             for m in info_pelicula.findAll("div", "credits")[idmusica]:
                 if len(re.findall(r'<span>(.*)</span>', str(m)))>0:
@@ -172,13 +175,13 @@ def extraer_lista(file):
     return l
 
 torrents = extraer_lista("../../ignoredFiles/torrents.txt")
-i = 349
+i = 3407
 printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
 count = 0
 f = open("../../ignoredFiles/peliculas", "a")
 torrentsArray = torrents.splitlines()
 
-for t in range(349,len(torrentsArray)):
+for t in range(3407,len(torrentsArray)):
     time.sleep(5)
     # print eval(t)
     # print eval(t)[0]
