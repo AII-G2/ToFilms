@@ -139,23 +139,32 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
         except:
             guion = ""
         if idmusica!=0:
-            for m in info_pelicula.findAll("div", "credits")[idmusica]:
-                if len(re.findall(r'<span>(.*)</span>', str(m)))>0:
-                    musica = musica+" "+re.findall(r'<span>(.*)</span>', str(m))[0].replace("</span>","")
+            try:
+                for m in info_pelicula.findAll("div", "credits")[idmusica]:
+                    if len(re.findall(r'<span>(.*)</span>', str(m)))>0:
+                        musica = musica+" "+re.findall(r'<span>(.*)</span>', str(m))[0].replace("</span>","")
+            except:
+                musica=""
             #print "Musica: "+musica
         if idfotografia!=0:
-            for f in info_pelicula.findAll("div", "credits")[idfotografia]:
-                if len(re.findall(r'<span>(.*)</span>', str(f)))>0:
-                    fotografia = fotografia+" "+re.findall(r'<span>(.*)</span>', str(f))[0].replace("</span>","")
+            try:
+                for f in info_pelicula.findAll("div", "credits")[idfotografia]:
+                    if len(re.findall(r'<span>(.*)</span>', str(f)))>0:
+                        fotografia = fotografia+" "+re.findall(r'<span>(.*)</span>', str(f))[0].replace("</span>","")
+            except:
+                fotografia = ""
             #print "Fotografia: "+fotografia
         for a in info_pelicula.findAll("span", {"itemprop": "name"}):
             actores = actores+a.string+", "
         actores = actores[0:len(actores)-2]
         #print "Reparto: "+actores
         if idproductora!=0:
-            for p in info_pelicula.findAll("div", "credits")[idproductora]:
-                if len(re.findall(r'<span>(.*)</span>', str(p)))>0:
-                    productora = productora+" "+re.findall(r'<span>(.*)</span>', str(p))[0].replace("</span>","")
+            try:
+                for p in info_pelicula.findAll("div", "credits")[idproductora]:
+                    if len(re.findall(r'<span>(.*)</span>', str(p)))>0:
+                        productora = productora+" "+re.findall(r'<span>(.*)</span>', str(p))[0].replace("</span>","")
+            except:
+                productora = ""
             #print "Productora: "+productora
         genero = info_pelicula.find("span", {"itemprop": "genre"}).a.string
         #print "Género: "+genero
@@ -175,13 +184,13 @@ def extraer_lista(file):
     return l
 
 torrents = extraer_lista("../../ignoredFiles/torrents.txt")
-i = 3407
+i = 3743
 printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
 count = 0
 f = open("../../ignoredFiles/peliculas", "a")
 torrentsArray = torrents.splitlines()
 
-for t in range(3407,len(torrentsArray)):
+for t in range(3743,len(torrentsArray)):
     time.sleep(5)
     # print eval(t)
     # print eval(t)[0]
