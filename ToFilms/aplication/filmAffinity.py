@@ -184,13 +184,13 @@ def extraer_lista(file):
     return l
 
 torrents = extraer_lista("../../ignoredFiles/torrents.txt")
-i = 5985
+i = 11785
 printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
 count = 0
 f = open("../../ignoredFiles/peliculas", "a")
 torrentsArray = torrents.splitlines()
 
-for t in range(5985,len(torrentsArray)):
+for t in range(11785,len(torrentsArray)):
     time.sleep(5)
     # print eval(t)
     # print eval(t)[0]
