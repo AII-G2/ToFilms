@@ -50,7 +50,7 @@ def extraer_peliculas(titulo, director, anyo):
     if l:
         soup = BeautifulSoup(l, 'html.parser')
         peliculas = soup.findAll("div", "movie-card movie-card-1")
-        reparto = ""
+        directorPelicula = ""
         for p in peliculas:
             #print(p)
             # print "Poster: " + p.find("div", "mc-poster").img.get('src')
@@ -65,7 +65,12 @@ def extraer_peliculas(titulo, director, anyo):
             #     # print "Actor: "+r.contents[0].string
             #     reparto = reparto + ", " + r.contents[0].string
             # print("Reparto: " + reparto)
-            if director == p.find("div", "mc-director").div.span.string:
+            for g in p.find("div", "mc-director").div.findAll("span","nb"):
+                if director!="":
+                    directorPelicula = directorPelicula+", "+g.a.get('title')
+                else:
+                    directorPelicula = g.a.get('title')
+            if director in directorPelicula:
                 titulo = p.find("div", "mc-title").a.string
                 link = "http://www.filmaffinity.com"+p.find("div", "mc-title").a.get('href')
                 poster = p.find("div","mc-poster").img.get('src')
@@ -183,7 +188,7 @@ def extraer_lista(file):
     f.close()
     return l
 
-torrents = extraer_lista("../../ignoredFiles/torrents.txt")
+torrents = extraer_lista("../ignoredFiles/torrents1.txt")
 i = 11786
 printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
 count = 0
@@ -212,3 +217,4 @@ for t in range(11786,len(torrentsArray)):
 
 f.close()
 print(count)
+
