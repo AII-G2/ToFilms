@@ -188,33 +188,77 @@ def extraer_lista(file):
     f.close()
     return l
 
-torrents = extraer_lista("../ignoredFiles/torrents1.txt")
-i = 11786
-printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
-count = 0
-f = open("../../ignoredFiles/peliculas", "a")
-torrentsArray = torrents.splitlines()
+# torrents = extraer_lista("../ignoredFiles/torrents1.txt")
+# i = 11786
+# printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
+# count = 0
+# f = open("../../ignoredFiles/peliculas", "a")
+# torrentsArray = torrents.splitlines()
+#
+# for t in range(11786,len(torrentsArray)):
+#     time.sleep(5)
+#     # print eval(t)
+#     # print eval(t)[0]
+#     # print eval(t)[4][3:].replace(".","")
+#     # print eval(t)[6][3:]
+#     titulo = eval(torrentsArray[t])[0]
+#     director = eval(torrentsArray[t])[4][3:].replace(".","")
+#     anyo = eval(torrentsArray[t])[6][3:].replace(".","")
+#     try:
+#         extraccion = extraer_peliculas(titulo, director, anyo)
+#         f.write(str(extraccion))
+#         f.write("\n")
+#     except UnboundLocalError:
+#     #     #print eval(t)[0]
+#         count = count + 1
+#     #     #print count
+#     printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
+#     i = i + 1
+#
+# f.close()
+# print(count)
 
-for t in range(11786,len(torrentsArray)):
-    time.sleep(5)
-    # print eval(t)
-    # print eval(t)[0]
-    # print eval(t)[4][3:].replace(".","")
-    # print eval(t)[6][3:]
-    titulo = eval(torrentsArray[t])[0]
-    director = eval(torrentsArray[t])[4][3:].replace(".","")
-    anyo = eval(torrentsArray[t])[6][3:].replace(".","")
-    try:
-        extraccion = extraer_peliculas(titulo, director, anyo)
-        f.write(str(extraccion))
-        f.write("\n")
-    except UnboundLocalError:
-    #     #print eval(t)[0]
-        count = count + 1
-    #     #print count
-    printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
+#Eliminación de Películas repetidas y se le añade un torrent por defecto
+
+# peliculas = extraer_lista("../ignoredFiles/peliculas").splitlines()
+# f = open("../ignoredFiles/peliculas1", "a")
+# i = 0
+# printProgress(i, 11546, prefix='Progress:', suffix='Complete', barLength=50)
+# for p in range(0,len(peliculas)-1):
+#     if peliculas[p] not in peliculas[p+1]:
+#         temp = eval(peliculas[p])
+#         temp.append('')
+#         f.write(str(temp))
+#         f.write("\n")
+#     printProgress(i, 11546, prefix='Progress:', suffix='Complete', barLength=50)
+#     i = i + 1
+# temp = eval(peliculas[len(peliculas)-1])
+# temp.append('')
+# f.write(str(temp))
+# f.close()
+
+#Se le añaden los link de los torrents a las películas
+
+torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
+peliculas = extraer_lista("../ignoredFiles/peliculas1").splitlines()
+f = open("../ignoredFiles/peliculasFinal", "a")
+i = 0
+
+printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+for p in peliculas:
+    pelicula = eval(p)
+    torrents = ''
+    for t in torrentsArray:
+        torrent = eval(t)
+        if pelicula[7] in torrent[4][3:].replace(".", "") and pelicula[4] in torrent[6][3:]:
+            if torrents=='':
+                torrents = torrent[len(torrent)-1]
+            else:
+                torrents = torrents+", "+torrent[len(torrent)-1]
+    pelicula[len(pelicula)-1] = torrents
+    f.write(str(pelicula))
+    f.write("\n")
+    printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
     i = i + 1
-
 f.close()
-print(count)
 
