@@ -239,26 +239,51 @@ def extraer_lista(file):
 
 #Se le añaden los link de los torrents a las películas
 
+# torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
+# peliculas = extraer_lista("../ignoredFiles/peliculas1").splitlines()
+# f = open("../ignoredFiles/peliculasFinal", "a")
+# i = 0
+#
+# printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+# for p in peliculas:
+#     pelicula = eval(p)
+#     torrents = ''
+#     for t in torrentsArray:
+#         torrent = eval(t)
+#         if pelicula[7] in torrent[4][3:].replace(".", "") and pelicula[4] in torrent[6][3:]:
+#             if torrents=='':
+#                 torrents = torrent[len(torrent)-1]
+#             else:
+#                 torrents = torrents+", "+torrent[len(torrent)-1]
+#     pelicula[len(pelicula)-1] = torrents
+#     f.write(str(pelicula))
+#     f.write("\n")
+#     printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+#     i = i + 1
+# f.close()
+
+#Se crea un fichero con los links de los torrents y su calidad
+
+
 torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
-peliculas = extraer_lista("../ignoredFiles/peliculas1").splitlines()
-f = open("../ignoredFiles/peliculasFinal", "a")
+peliculas = extraer_lista("../ignoredFiles/peliculasFinal").splitlines()
+f = open("../ignoredFiles/torrentsFinal.txt", "a")
 i = 0
 
 printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
 for p in peliculas:
     pelicula = eval(p)
-    torrents = ''
-    for t in torrentsArray:
-        torrent = eval(t)
-        if pelicula[7] in torrent[4][3:].replace(".", "") and pelicula[4] in torrent[6][3:]:
-            if torrents=='':
-                torrents = torrent[len(torrent)-1]
-            else:
-                torrents = torrents+", "+torrent[len(torrent)-1]
-    pelicula[len(pelicula)-1] = torrents
-    f.write(str(pelicula))
-    f.write("\n")
+    if "," in pelicula[len(pelicula)-1]:
+        urls = pelicula[len(pelicula)-1].split(",")
+    else:
+        urls = [pelicula[len(pelicula)-1]]
+    for u in urls:
+        for t in torrentsArray:
+            torrent = eval(t)
+            if torrent[len(torrent)-1] in u:
+                f.write(str([u,torrent[8]]))
+                f.write("\n")
+                break
     printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
     i = i + 1
 f.close()
-
