@@ -25,8 +25,9 @@ class Pelicula(models.Model):
     guion = models.CharField(max_length=100)
     musica = models.CharField(max_length=100)
     fotografia = models.CharField(max_length=100)
+    productora = models.CharField(max_length=100)
     categoria = models.CharField(max_length=100)
-    sinopsis = models.TextField()
+    sinopsis = models.TextField(blank=True, null=True)
 
     actores = models.ManyToManyField(Actor)
     directores = models.ManyToManyField(Director)
