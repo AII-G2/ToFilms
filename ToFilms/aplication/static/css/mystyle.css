@@ -1,36 +1,6 @@
 * {
     font-family: Calibri;
 }
-.clase_ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-}
-
-.clase_li {
-    float: left;
-}
-
-.clase_li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.clase_li a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-.clase_li a.active {
-    color: white;
-    background-color: #008CBA;
-}
-
 
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
@@ -41,7 +11,10 @@ body, html {height: 100%}
     background-size: cover;
 }
 .box{
-  margin: 100px auto;
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10%;
   width: 500px;
   height: 50px;
 }
@@ -82,8 +55,8 @@ body, html {height: 100%}
 .container-1 .icon{
   position: absolute;
   top: 50%;
-  margin-left: 17px;
-  margin-top: 15px;
+  margin-left: 4%;
+  margin-top: -4%;
   z-index: 1;
   color: #4f5b66;
 }
@@ -91,3 +64,37 @@ body, html {height: 100%}
     outline:none;
     background: #ffffff;
   }
+
+
+.fsSubmitButton
+{
+padding: 10px 15px 11px !important;
+font-size: 18px !important;
+background-color: #006df0;
+font-weight: bold;
+text-shadow: 1px 1px #005dcd;
+color: #ffffff;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border: 1px solid #0f75f0;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    margin-left: 2%;
+
+}
+
+.toFilmsInfo{
+    text-align: right;
+    color: #cbcbcb;
+    margin-right: 1%;
+        margin-top: 0.5%;
+
+}
+
+
+.toFilmsInfo:hover {
+    color: #fff;
+}

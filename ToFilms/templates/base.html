@@ -7,23 +7,42 @@
     <title>Base</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/listado.css' %}">
+
     <link rel="stylesheet" href="{% static 'css/css.css' %}">
     <link rel="stylesheet" href="{% static 'css/w3.css' %}">
     <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}"> <!--Coleccion iconos-->
-    <link rel="shortcut icon" href="static/images/favicon.ico">
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
 
 </head>
 
 <body>
 
+<div class="cabecera">
+<a title="Principal" href="/"><img class="logoCentral" src="/static/images/logoBlanco.png"></a>
+
+         <div class="container-2">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input type="search" id="search" placeholder="Buscar..." />
+         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
 {% block cabeza %}{% endblock %}
 {% block titulo %}{% endblock %}
 {% block subtitulo %}{% endblock %}
 {% block cuerpo %}{% endblock %}
-
-<div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <img style="width: 18%" src="static/images//logoBlanco.png">
-</div>
-
 </body>
 </html>

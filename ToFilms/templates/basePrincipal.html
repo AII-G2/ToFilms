@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>toFilms</title>
+
+    <meta charset="UTF-8">
+    <title>Base Principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}"> <!--Coleccion iconos-->
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+
+</head>
+
+<body>
+
+{% block cabeza %}{% endblock %}
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+{% block cuerpo %}{% endblock %}
+</div>
+
+<div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <img style="width: 18%" src="static/images/logoBlanco.png">
+</div>
+<a href="/toFilms"><div class="w3-display-topright toFilmsInfo">Sobre toFilms</div></a>
+</body>
+</html>
