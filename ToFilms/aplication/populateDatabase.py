@@ -71,6 +71,20 @@ def populateDirectores():
         i = i + 1
         printProgress(i, 8154, prefix='Progress:', suffix='Complete', barLength=50)
 
+@transaction.atomic()
+def populateTorrents():
+    print "Populando Torrents"
+    torrents = leer_fichero("ignoredFiles/torrentsFinal.txt").splitlines()
+    Torrent.objects.all().delete()
+    i = 0
+    printProgress(i, 14169, prefix='Progress:', suffix='Complete', barLength=50)
+    for t in torrents:
+        info_torrent = eval(t)
+        torrent = Torrent(url= info_torrent[0], calidad= info_torrent[1])
+        torrent.save()
+        i = i + 1
+        printProgress(i, 14169, prefix='Progress:', suffix='Complete', barLength=50)
+
 @transaction.atomic
 def populatePeliculas():
     print "Populando Peliculas"
@@ -80,8 +94,9 @@ def populatePeliculas():
     printProgress(i, 8154, prefix='Progress:', suffix='Complete', barLength=50)
     for p in peliculas:
         info_pelicula = eval(p)
-        actores = eval(p)[11].split(",")
-        directores = eval(p)[7].split(",")
+        actores = info_pelicula[11].split(",")
+        directores = info_pelicula[7].split(",")
+        torrents = info_pelicula[15].split(",")
         if info_pelicula[2]!='--' and info_pelicula[2]!='':
             valoracion_media = info_pelicula[2].replace(",",".")
         else:
@@ -113,23 +128,13 @@ def populatePeliculas():
         for d in directores:
             director = Director.objects.filter(nombre=d)[0]
             pelicula.directores.add(director)
+
+        for t in torrents:
+            try:
+                torrent = Torrent.objects.filter(url=t)[0]
+                pelicula.torrent_set.add(torrent)
+            except:
+                print t
+
         i = i + 1
         printProgress(i, 8154, prefix='Progress:', suffix='Complete', barLength=50)
-
-@transaction.atomic()
-def populateTorrents():
-    print "Populando Torrents"
-    torrents = leer_fichero("ignoredFiles/torrentsFinal.txt").splitlines()
-    peliculas = leer_fichero("ignoredFiles/peliculasFinal").splitlines()
-    Torrent.objects.all().delete()
-    i = 0
-    printProgress(i, 14169, prefix='Progress:', suffix='Complete', barLength=50)
-    for t in torrents:
-        info_torrent = eval(t)
-        for p in peliculas:
-            if info_torrent[0] == eval(p)[15]:
-                pelicula = Pelicula.objects.filter(titulo=eval(p)[0], anyo=eval(p)[4])[0]
-        torrent = Torrent(url= info_torrent[0], calidad= info_torrent[1], pelicula= pelicula)
-        torrent.save()
-        i = i + 1
-        printProgress(i, 14169, prefix='Progress:', suffix='Complete', barLength=50)

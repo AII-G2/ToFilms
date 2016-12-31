@@ -45,7 +45,7 @@ class Torrent(models.Model):
     calidad = models.CharField(max_length=100)
     url = models.URLField()
 
-    pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
+    pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE, blank=True, null=True)
 
     def __unicode__(self):
         return self.url+" "+self.calidad
