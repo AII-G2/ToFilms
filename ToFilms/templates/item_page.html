@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block cuerpo %}
+
+
+<section>
+    <div class="tbl-content-info">
+    <table cellpadding="0" cellspacing="0" border="1" class="blurred-bg">
+
+     <tr>
+		<td ROWSPAN=5><div align="center"><img src="{{ pelicula.url_imagen}}"></div></td>
+	    	<td><span class="atributo_pelicula" >Titulo: </span>{{ pelicula.titulo}}</td>
+         <td><span class="atributo_pelicula" >Categoria: </span>{{ pelicula.categoria}}</td>
+
+
+
+         <td colspan="2"><span class="atributo_pelicula" >Pais: </span>{{ pelicula.pais}}</td>
+         <td colspan="1" ROWSPAN=3><div align="center"><span class="atributo_pelicula_valor" >{{pelicula.valoracion_media}}</span></div></td>
+	</tr>
+
+    <tr>
+		<td><span class="atributo_pelicula" >Año: </span>{{pelicula.anyo}}</td>
+        <td colspan="3"><span class="atributo_pelicula" >Duración: </span>{{pelicula.duracion}} min</td>
+
+	</tr>
+	<tr>
+		<td colspan="4"><span class="atributo_pelicula" >Director: </span>
+        {% for elemento in pelicula.directores.all %}
+            {{ elemento.nombre }}
+        {% endfor %}
+        </td>
+	</tr>
+
+     <tr>
+		<td colspan="5"><span class="atributo_pelicula" >Reparto: </span>
+        {% for elemento in pelicula.actores.all %}
+            {{ elemento.nombre }},
+        {% endfor %}
+        </td>
+	</tr>
+
+
+    <tr>
+		<td colspan="5"><span class="atributo_pelicula" >Sinopsis: </span>{{ pelicula.sinopsis}}</td>
+	</tr>
+    <tr>
+		<td colspan="6">
+            <span class="atributo_pelicula" >Música: </span>{{ pelicula.musica}},
+            <span class="atributo_pelicula" >Guión: </span>{{ pelicula.guion}},
+            <span class="atributo_pelicula" >Fotografia: </span>{{ pelicula.fotografia}},
+            <span class="atributo_pelicula" >Productora: </span>{{ pelicula.productora}},
+
+        </td>
+	</tr>
+    <tr>
+		<td colspan="6">
+            <span class="atributo_pelicula" >Número de valoraciones: </span>{{ pelicula.votaciones_totales}}
+        </td>
+	</tr>
+
+    </table>
+  </div>
+</section>
+
+
+<section>
+    <h1>Torrents</h1>
+  <div class="tbl-content-torrent">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      {% for elemento in torrents %}
+        <tr>
+
+            <td><a href="{{ elemento.url }}">Link del torrent</a></td>
+            <td>{{ elemento.calidad }}
+
+            {% if "1080p" in elemento.calidad or "HD" in elemento.calidad %}
+                <img src="/static/images/hd-sign.png">
+            {% endif %}
+
+
+
+
+
+
+            </td>
+
+
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

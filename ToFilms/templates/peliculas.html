@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block cuerpo %}
+
+<section>
+<div class="tituloBusqueda">Has buscado: "{{tituloDePelicula}}"</div>
+  <div align="center" class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th><div align="center">Cartel</div></th>
+          <th>Título</th>
+          <th>Año</th>
+          <th>Categoria</th>
+            <th>Duración</th>
+            <th>Valoración</th>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+  </br>
+
+    <div class="tituloBusqueda">{{message}}</div>
+
+    <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0" class="blurred-bg">
+      <tbody>
+{% for elemento in peliculas.posts %}
+
+  <!--for demo wrap-->
+
+        <tr onclick="document.location = '/info/?film={{elemento.titulo}}&anyo={{elemento.anyo}}';">
+          <td><div align="center"><img style="width: 30%" src={{elemento.url_imagen}}></div></td>
+          <td>{{elemento.titulo}}</td>
+          <td>{{elemento.anyo}}</td>
+          <td>{{elemento.categoria}}</td>
+          <td>{{elemento.duracion}} min</td>
+          <td>{{elemento.valoracion_media}}</td>
+
+        </tr>
+
+{% endfor %}
+    </tbody>
+    </table>
+  </div>
+
+
+
+</section>
+<div class="pagination pagination-right">
+             {% if peliculas.paginator.has_prev %}
+                  <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.firstPage }}">Primera</a>
+                  <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.prev_page }}"><img src="/static/images/izquierda.png"></a>
+
+              {% endif %}
+            <span>Página {{peliculas.paginator.page}} de {{peliculas.paginator.pages}}</span>
+              {% if peliculas.paginator.has_next %}
+                  <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.next_page }}"><img src="/static/images/derecha.png"></a>
+                 <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.pages }}">Ultima</a>
+
+              {% endif %}
+
+</div>
+
+
+{% endblock %}
