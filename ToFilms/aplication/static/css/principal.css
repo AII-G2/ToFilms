@@ -1,0 +1,125 @@
+* {
+    font-family: Calibri;
+}
+
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('../images/fondo1080.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.box{
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10%;
+  width: 500px;
+  height: 50px;
+}
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+.container-1 input#search{
+  width: 500px;
+  height: 50px;
+  background: #ffffff;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container-1 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;
+}
+
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 4%;
+  margin-top: -4%;
+  z-index: 1;
+  color: #4f5b66;
+}
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background: #ffffff;
+  }
+
+
+.fsSubmitButton
+{
+padding: 10px 15px 11px !important;
+font-size: 18px !important;
+background-color: #006df0;
+font-weight: bold;
+text-shadow: 1px 1px #005dcd;
+color: #ffffff;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border: 1px solid #0f75f0;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    margin-left: 2%;
+
+}
+
+.toFilmsInfo{
+    text-align: right;
+    color: #cbcbcb;
+    margin-right: 1%;
+        margin-top: 0.5%;
+
+}
+
+
+.toFilmsInfo:hover {
+    color: #fff;
+}
+
+.tbl-content-about{
+  height: auto; /*height:500px;*/
+    width: 800px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(6,13,27,0.8);
+    color: white;
+
+    font-size: 18px;
+}
+
+.tbl-content-about p{
+  font-style: italic;
+}
+
+.tbl-content-about span{
+  float: right;
+    margin-bottom: 2%;
+}
+
+.tbl-content-into{
+    padding: 4%;
+}

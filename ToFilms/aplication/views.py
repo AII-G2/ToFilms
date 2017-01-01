@@ -102,7 +102,7 @@ def item_page(request):
     try:
         # Tomamos el valor de parametro page, usando GET
         idP = request.GET.get('film')
-        pelicula = Pelicula.objects.get(id=idP)  # libro recomendado
+        pelicula = Pelicula.objects.get(id=idP)
         torrents = Torrent.objects.filter(pelicula=pelicula)
     except:
         item = None
