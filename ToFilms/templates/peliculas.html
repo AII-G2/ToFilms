@@ -60,7 +60,7 @@
             <span>Página {{peliculas.paginator.page}} de {{peliculas.paginator.pages}}</span>
               {% if peliculas.paginator.has_next %}
                   <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.next_page }}"><img src="/static/images/derecha.png"></a>
-                 <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.pages }}">Ultima</a>
+                 <a href="/peliculas/?film={{tituloDePelicula}}&page={{ peliculas.paginator.pages }}">Última</a>
 
               {% endif %}
 

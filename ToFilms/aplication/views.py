@@ -28,7 +28,8 @@ def principal(request):
             return render_to_response('peliculas.html', {'peliculas': cxt, 'message': message, 'tituloDePelicula': tituloDePelicula})
     else:
         formulario = PeliculaForm()
-        return render(request, 'principal.html', {'formulario': formulario})
+        numPeliculas = Pelicula.objects.all().count()
+        return render(request, 'principal.html', {'formulario': formulario, 'numPeliculas': numPeliculas})
 
 
 def Paginate(request, queryset, pages):
@@ -108,3 +109,12 @@ def item_page(request):
         pelicula = None
 
     return render(request, 'item_page.html', {'pelicula': pelicula, 'torrents': torrents})
+
+def about_toFilms(request):
+    message= 'toFilms es un proyecto pensado y propuesto para la asignatura de Acceso Inteligente a la Información, ' \
+             'con el que se ha conseguido relacionar peliculas del portal "www.filmaffinity.com" con archivos de descarga torrents ' \
+             'del portal "www.mejortorrent.com", de manera que tenemos para cada una de las peliculas una serie de links de descarga' \
+             ' para poder descargar. Equipo de desarrollo:' \
+
+
+    return render(request, 'about.html', {'message': message})
