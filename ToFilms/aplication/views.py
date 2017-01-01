@@ -100,9 +100,8 @@ def mostrar_peliculas(request):
 def item_page(request):
     try:
         # Tomamos el valor de parametro page, usando GET
-        tituloP = request.GET.get('film')
-        anyop = request.GET.get('anyo')
-        pelicula = Pelicula.objects.get(titulo=tituloP, anyo=anyop)  # libro recomendado
+        idP = request.GET.get('film')
+        pelicula = Pelicula.objects.get(id=idP)  # libro recomendado
         torrents = Torrent.objects.filter(pelicula=pelicula)
     except:
         item = None
