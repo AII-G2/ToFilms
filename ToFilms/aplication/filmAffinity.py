@@ -111,18 +111,14 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
         fotografia = ""
         guion = ""
         musica = ""
-        productora = ""
         idguion = 0
         idmusica = 0
         idfotografia = 0
-        idproductora = 0
         for p in info_pelicula.findAll("dt"):
             if "Música" in p.string:
                 idmusica = idguion + 1
             if "Fotografía" in p.string:
                 idfotografia = idguion+idmusica+1
-            if "Productora" in p.string:
-                idguion = idguion+idmusica+idfotografia+1
         fecha = info_pelicula.find("dd", {"itemprop": "datePublished"}).string
         #print "Fecha: "+fecha
         try:
@@ -163,14 +159,6 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
             actores = actores+a.string+", "
         actores = actores[0:len(actores)-2]
         #print "Reparto: "+actores
-        if idproductora!=0:
-            try:
-                for p in info_pelicula.findAll("div", "credits")[idproductora]:
-                    if len(re.findall(r'<span>(.*)</span>', str(p)))>0:
-                        productora = productora+" "+re.findall(r'<span>(.*)</span>', str(p))[0].replace("</span>","")
-            except:
-                productora = ""
-            #print "Productora: "+productora
         genero = info_pelicula.find("span", {"itemprop": "genre"}).a.string
         #print "Género: "+genero
         try:
@@ -179,7 +167,7 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
             sipnosis = ""
         #print "Sipnosis: "+sipnosis
 
-    return [titulo, poster, rating, nvotos, fecha, duracion, pais, director, guion, musica, fotografia, actores, productora, genero, sipnosis]
+    return [titulo, poster, rating, nvotos, fecha, duracion, pais, director, guion, musica, fotografia, actores, genero, sipnosis]
 
 
 def extraer_lista(file):

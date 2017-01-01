@@ -96,7 +96,7 @@ def populatePeliculas():
         info_pelicula = eval(p)
         actores = info_pelicula[11].split(",")
         directores = info_pelicula[7].split(",")
-        torrents = info_pelicula[15].split(",")
+        torrents = info_pelicula[14].split(",")
         if info_pelicula[2]!='--' and info_pelicula[2]!='':
             valoracion_media = info_pelicula[2].replace(",",".")
         else:
@@ -112,11 +112,11 @@ def populatePeliculas():
         Pelicula.objects.get_or_create(titulo= info_pelicula[0], url_imagen= info_pelicula[1],
                             valoracion_media= valoracion_media, anyo= info_pelicula[4], duracion= duracion,
                             pais= info_pelicula[6], guion= info_pelicula[8], musica= info_pelicula[9], fotografia=info_pelicula[10],
-                            productora= info_pelicula[12], categoria=info_pelicula[13], sinopsis= info_pelicula[14])
+                            categoria=info_pelicula[12], sinopsis= info_pelicula[13])
         pelicula = Pelicula.objects.get(titulo= info_pelicula[0], url_imagen= info_pelicula[1],
                             valoracion_media= valoracion_media, anyo= info_pelicula[4], duracion= duracion,
                             pais= info_pelicula[6], guion= info_pelicula[8], musica= info_pelicula[9], fotografia=info_pelicula[10],
-                            productora= info_pelicula[12], categoria=info_pelicula[13], sinopsis= info_pelicula[14])
+                            categoria=info_pelicula[12], sinopsis= info_pelicula[13])
 
         pelicula.votaciones_totales = votaciones_totales
         pelicula.save()
