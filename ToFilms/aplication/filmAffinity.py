@@ -157,7 +157,7 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
             #print "Fotografia: "+fotografia
         for a in info_pelicula.findAll("span", {"itemprop": "name"}):
             actores = actores+a.string+", "
-        actores = actores[0:len(actores)-2]
+        actores = actores[len(director)+2:len(actores)-2]
         #print "Reparto: "+actores
         genero = info_pelicula.find("span", {"itemprop": "genre"}).a.string
         #print "Género: "+genero
