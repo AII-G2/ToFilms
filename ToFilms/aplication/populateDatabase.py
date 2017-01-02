@@ -37,8 +37,8 @@ def leer_fichero(file):
 def populateDatabase():
     populateActores()
     populateDirectores()
-    populatePeliculas()
     populateTorrents()
+    populatePeliculas()
 
 
 @transaction.atomic
@@ -65,7 +65,7 @@ def populateDirectores():
     printProgress(i, 8154, prefix='Progress:', suffix='Complete', barLength=50)
     for d in directores:
         info_directores = eval(d)[7].split(",")
-        print info_directores
+        # print info_directores
         for d1 in info_directores:
             Director.objects.get_or_create(nombre=d1)
         i = i + 1
@@ -134,7 +134,8 @@ def populatePeliculas():
                 torrent = Torrent.objects.filter(url=t)[0]
                 pelicula.torrent_set.add(torrent)
             except:
-                print t
+                pass
+                # print t
 
         i = i + 1
         printProgress(i, 8154, prefix='Progress:', suffix='Complete', barLength=50)
