@@ -126,3 +126,21 @@ def about_toFilms(request):
 
 
     return render(request, 'about.html', {'message': message})
+
+
+def busqueda_avanzada(request):
+    if request.method=='POST':
+        formulario = PuntuacionForm(request.POST)
+        datos ={}
+        for i in formulario:
+            nombre = i.name
+            valor = str(i.value()).strip()
+            if len(valor)>0:
+                datos[nombre]=valor
+
+        #Llamamos la clase buscar y le pasamos los datos para que busque
+
+        return render(request, 'busqueda_whoosh.html', {'formulario': formulario})
+    else:
+        formulario = PuntuacionForm()
+        return render(request, 'busqueda_whoosh.html', {'formulario': formulario})

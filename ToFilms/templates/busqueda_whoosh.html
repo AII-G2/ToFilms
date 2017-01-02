@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block titulo %}<h1>Formulario</h1>{% endblock %}
+{% block subtitulo %}<h3>{{subtitle}}</h3>{% endblock %}
+
+{% block cuerpo %}
+	<form id='formulario' method='post' action=''>{% csrf_token %}
+	{{formulario.as_p}}
+	<p><input type='submit' value='Buscar'/></p>
+	</form>
+{% endblock %}

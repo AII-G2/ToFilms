@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^info', views.item_page),
     url(r'^info/(?P<pk>\d+)$', views.item_page),
     url(r'^toFilms', views.about_toFilms),
+    url(r'^buscar/avanzada', views.busqueda_avanzada),
+
 ]

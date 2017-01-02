@@ -44,8 +44,8 @@ class whoosh_indice():
         db = sqlite3.connect(self.ruta_db)
 
         schema = Schema(id=ID(stored=True), titulo=TEXT(stored=False), sipnosis=TEXT(stored=False),
-                        duracion=NUMERIC(stored=False), anyo=NUMERIC(stored=False), director=KEYWORD(stored=False),
-                        actores=KEYWORD(stored=False), valoracion=NUMERIC(stored=False), pais=ID(stored=False))
+                        duracion=NUMERIC(stored=False), anyo=NUMERIC(stored=False), director=TEXT(stored=False),
+                        actores=TEXT(stored=False), valoracion=NUMERIC(stored=False), pais=ID(stored=False))
         ix = create_in(self.folder_indice_peliculas, schema)
         writer = ix.writer()
 
@@ -59,8 +59,6 @@ class whoosh_indice():
             anyo = int(row[5])
             duracion = int(row[6])
             pais = row[7]
-
-            print [id_pelicula, titulo, sipnosis, valoracion_media, anyo, duracion, pais]
 
             actores, directores = self.get_info_film(base_datos=db, id_pelicula=id_pelicula)
 
@@ -82,13 +80,35 @@ class whoosh_busqueda():
         if not index.exists_in(self.folder_indice_peliculas):
             w_indice.crea_indice_peliculas()
 
-    def buscar_director(self):
+    def buscar(self, datos):
 
         ix = index.open_dir(self.folder_indice_peliculas)
+        valores = ['titulo','sipnosis','actores','director','anyo','valoracion','pais','duracion']
+        query=[]
+
+        for valor in valores:
+            if datos.has_key(valor):
+                if (valor is 'duracion') or (valor is  'valoracion'):
+                    query.append(valor + ':['+datos[valor]+' to]')
+                else:
+                    query.append(valor + ':"' + datos[valor]+'"')
+
+        text_query = " AND ".join(x for x in query)
 
         with ix.searcher() as searcher:
-            query = QueryParser('director', ix.schema).parse('Alejandro Amenábar')
-            busqueda = searcher.search(query)
+            ids = []
+
+            qp = QueryParser(None, schema=ix.schema)
+            q = qp.parse(unicode(text_query, "utf-8"))
+            busqueda = searcher.search(q)
+
             for i in busqueda:
-                print i
-                return i
+                ids.append(i['id'])
+
+def buscar_peliculas(data):
+    busqueda = whoosh_busqueda('indexpelicula', '../db.sqlite3')
+    return busqueda.buscar(data)
+
+
+busqueda = whoosh_indice('indexpelicula', '../db.sqlite3')
+busqueda.crea_indice_peliculas()
