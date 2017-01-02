@@ -195,19 +195,3 @@ section{
   font-size: 250%;
 }
 
-
-.back{
-  filter: grayscale(100%);
-
--webkit-filter: grayscale(100%);
-
-transition:filter 0.2s;
-
--webkit-transition:-webkit-filter 1s;
-}
-
-.back:hover {
-   filter: grayscale(0);
-
--webkit-filter: grayscale(0);
-}

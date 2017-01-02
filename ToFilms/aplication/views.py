@@ -104,11 +104,19 @@ def item_page(request):
         idP = request.GET.get('film')
         pelicula = Pelicula.objects.get(id=idP)
         torrents = Torrent.objects.filter(pelicula=pelicula)
+
+
+        actoresPelicula = pelicula.actores.values_list('nombre', flat=True)
+        ultimoActorPelicula = actoresPelicula[len(actoresPelicula)-1]
+
+        directoresPelicula = pelicula.directores.values_list('nombre', flat=True)
+        ultimoDirectoresPelicula = directoresPelicula[len(directoresPelicula)-1]
+
     except:
         item = None
         pelicula = None
 
-    return render(request, 'item_page.html', {'pelicula': pelicula, 'torrents': torrents})
+    return render(request, 'item_page.html', {'pelicula': pelicula, 'torrents': torrents, 'ultimoActorPelicula':ultimoActorPelicula, 'ultimoDirectoresPelicula':ultimoDirectoresPelicula})
 
 def about_toFilms(request):
     message= 'toFilms es un proyecto pensado y propuesto para la asignatura de Acceso Inteligente a la Información, ' \

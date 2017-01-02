@@ -103,7 +103,7 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
   height: auto; /*height:500px;*/
     width: 800px;
   overflow-x:auto;
-  margin-top: 0px;
+  margin-top: 1%;
   border: 1px solid rgba(255,255,255,0.2);
     background-color: rgba(6,13,27,0.8);
     color: white;
@@ -121,5 +121,6 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
 .tbl-content-into{
+
     padding: 4%;
 }

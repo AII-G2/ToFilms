@@ -27,7 +27,9 @@
 	<tr>
 		<td colspan="4"><span class="atributo_pelicula" >Director: </span>
         {% for elemento in pelicula.directores.all %}
-            {{ elemento.nombre }}
+            {{ elemento.nombre }}{% if elemento.nombre == ultimoDirectoresPelicula %}<span>.</span>
+            {% else %}<span>,</span>
+            {% endif %}
         {% endfor %}
         </td>
 	</tr>
@@ -35,7 +37,9 @@
      <tr>
 		<td colspan="5"><span class="atributo_pelicula" >Reparto: </span>
         {% for elemento in pelicula.actores.all %}
-            {{ elemento.nombre }}
+            {{elemento.nombre}}{% if elemento.nombre == ultimoActorPelicula %}<span>.</span>
+            {% else %}<span>,</span>
+            {% endif %}
         {% endfor %}
         </td>
 	</tr>
@@ -46,9 +50,9 @@
 	</tr>
     <tr>
 		<td colspan="6">
-            <span class="atributo_pelicula" >Música: </span>{{ pelicula.musica}},
-            <span class="atributo_pelicula" >Guión: </span>{{ pelicula.guion}},
-            <span class="atributo_pelicula" >Fotografia: </span>{{ pelicula.fotografia}},
+            <span class="atributo_pelicula" >Música: </span>{{ pelicula.musica}} /
+            <span class="atributo_pelicula" >Guión: </span>{{ pelicula.guion}} /
+            <span class="atributo_pelicula" >Fotografia: </span>{{ pelicula.fotografia}}
         </td>
 	</tr>
     <tr>
