@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Base Principal</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/principal.css' %}">
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/w3.css' %}">
@@ -22,7 +23,7 @@
 </div>
 
 <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <img style="width: 18%" src="static/images/logoBlanco.png">
+    <a title="Principal" href="/"><img style="width: 18%" src="static/images/logoBlanco.png"></a>
 </div>
 <a href="/toFilms"><div class="w3-display-topright toFilmsInfo">Sobre toFilms</div></a>
 </body>

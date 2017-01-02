@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <title>Base</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/principal.css' %}">
     <link rel="stylesheet" href="{% static 'css/listado.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/css.css' %}">
     <link rel="stylesheet" href="{% static 'css/w3.css' %}">
@@ -21,18 +22,9 @@
 <div class="cabecera">
 <a title="Principal" href="/"><img class="logoCentral" src="/static/images/logoBlanco.png"></a>
 
-         <div class="container-2">
-            <span class="icon"><i class="fa fa-search"></i></span>
-            <input type="search" id="search" placeholder="Buscar..." />
-         </div>
 
 
-
-
-
-
-
-
+<div class="menu"><a href="/"><span class="fsButton">Principal</span></a><a href="/avanzada"><span class="fsButton">Busqueda avanzada</span></a></div>
 
 
 

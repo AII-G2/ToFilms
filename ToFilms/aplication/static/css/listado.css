@@ -26,14 +26,15 @@ table{
 .tbl-content-info{
   height: auto; /*height:500px;*/
   overflow-x:auto;
-  margin-top: 0px;
+  margin-top: 1%;
   border: 1px solid rgba(255,255,255,0.3);
     background-color: rgba(255,255,255,0.2);
 
 }
 
 .tbl-content-torrent{
-  height: 160px; /*height:500px;*/
+  max-height: 130px;
+  height: auto; /*height:500px;*/
   overflow-x:auto;
   margin-top: 0px;
     margin-bottom: 3%;
@@ -121,10 +122,9 @@ section{
 }
 
 .cabecera{
-  margin-top: 1%;
     margin-left: 15%;
     margin-right: 15%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
 }
 
 .logoCentral{
@@ -194,3 +194,4 @@ section{
 .atributo_pelicula_valor{
   font-size: 250%;
 }
+

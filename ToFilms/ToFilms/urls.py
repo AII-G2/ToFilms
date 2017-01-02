@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^peliculas', views.mostrar_peliculas),
     url(r'^peliculas/(?P<pt>\d+)&(?P<pk>\d+)/', views.mostrar_peliculas),
     url(r'^info', views.item_page),
-    url(r'^info/(?P<pt>\d+)&(?P<pk>\d+)', views.item_page),
+    url(r'^info/(?P<pk>\d+)$', views.item_page),
+    url(r'^toFilms', views.about_toFilms),
 ]
