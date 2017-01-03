@@ -1,10 +1,109 @@
 {% extends 'base.html' %}
 {% block titulo %}<h1>Formulario</h1>{% endblock %}
-{% block subtitulo %}<h3>{{subtitle}}</h3>{% endblock %}
+{% block subtitulo %}<h3>{{ subtitle }}</h3>{% endblock %}
 
 {% block cuerpo %}
-	<form id='formulario' method='post' action=''>{% csrf_token %}
-	{{formulario.as_p}}
-	<p><input type='submit' value='Buscar'/></p>
-	</form>
+    <div class="container">
+        <form id="formulario" method="post" action="" style="text-align: center;">{% csrf_token %}
+
+            <p><label for="id_titulo" style="color: white;">Título:</label> <input id="id_titulo" name="titulo"
+                                                                                   type="text">
+                <label style="color: white;" for="id_sipnosis">Sipnosis:</label> <input id="id_sipnosis" name="sipnosis"
+                                                                                        type="text"></p>
+            <p><label for="id_director" style="color: white;">Director:</label> <input id="id_director" name="director"
+                                                                                       type="text">
+                <label for="id_actores" style="color: white;">Actor:</label> <input id="id_actores" name="actores"
+                                                                                    type="text"></p>
+            <p><label for="id_duracion" style="color: white;">Duración:</label> <input id="id_duracion" name="duracion"
+                                                                                       type="number">
+                <label for="id_anyo" style="color: white;">Año:</label> <input id="id_anyo" name="anyo" type="number">
+            </p>
+            <p><label for="id_pais" style="color: white;">País:</label> <input id="id_pais" name="pais" type="text"></p>
+            <p>
+                <label for="id_valoracion" style="color: white;">Puntuación mayor que:</label>
+                <select id="id_valoracion" name="valoracion">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </p>
+            <p><input type="submit" value="Buscar"></p>
+        </form>
+
+    </div>
+
+
+    <section>
+        <div class="tituloBusqueda">Has buscado: "{{ datos }}"</div>
+        <div align="center" class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                <tr>
+                    <th>
+                        <div align="center">Cartel</div>
+                    </th>
+                    <th>Título</th>
+                    <th>Año</th>
+                    <th>Categoria</th>
+                    <th>Duración</th>
+                    <th>Valoración</th>
+
+                </tr>
+                </thead>
+            </table>
+        </div>
+        </br>
+
+        <div class="tituloBusqueda">{{ message }}</div>
+
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0" class="blurred-bg">
+                <tbody>
+                {% for elemento in peliculas.posts %}
+
+                    <!--for demo wrap-->
+
+                    <tr onclick="document.location = '/info/?film={{ elemento.id }}';">
+                        <td>
+                            <div align="center"><img style="width: 30%" src={{ elemento.url_imagen }}></div>
+                        </td>
+                        <td>{{ elemento.titulo }}</td>
+                        <td>{{ elemento.anyo }}</td>
+                        <td>{{ elemento.categoria }}</td>
+                        <td>{{ elemento.duracion }} min</td>
+                        <td>{{ elemento.valoracion_media }}</td>
+
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="pagination pagination-right">
+        {% if peliculas.paginator.has_prev %}
+            <a href="/avanzada?{{ url }}&page={{ peliculas.paginator.firstPage }}">Primera</a>
+            <a href="/avanzada?{{ url }}&page={{ peliculas.paginator.prev_page }}"><img
+                    src="/static/images/izquierda.png"></a>
+
+        {% endif %}
+        <span>Página {{ peliculas.paginator.page }} de {{ peliculas.paginator.pages }}</span>
+        {% if peliculas.paginator.has_next %}
+            <a href="/avanzada?{{ url }}&page={{ peliculas.paginator.next_page }}"><img
+                    src="/static/images/derecha.png"></a>
+            <a href="/avanzada?{{ url }}&page={{ peliculas.paginator.pages }}">Última</a>
+
+        {% endif %}
+
+    </div>
 {% endblock %}
+
+
+
