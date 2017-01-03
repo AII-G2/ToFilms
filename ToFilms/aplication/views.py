@@ -132,7 +132,7 @@ def about_toFilms(request):
 
 
 def busqueda_avanzada(request):
-    from aplication.busqueda.busquedaWhoosh import *
+    from aplication.busqueda.busquedaWhoosh import buscar
 
     if request.method == 'POST':
         formulario = PuntuacionForm(request.POST)
@@ -197,7 +197,7 @@ def busqueda_avanzada(request):
         return render(request, 'busqueda_whoosh.html', {'formulario': formulario, 'peliculas': []})
 
 def crea_indice(request):
-    from aplication.busqueda.busquedaWhoosh import *
+    from aplication.busqueda.busquedaWhoosh import crea_indice_peliculas
 
     crea_indice_peliculas(db_path='.//db.sqlite3',path='aplication//busqueda//indexfilms')
 
