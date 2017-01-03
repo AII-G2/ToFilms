@@ -166,7 +166,7 @@ def busqueda_avanzada(request):
         url_string = '&'.join(x for x in array_url)
 
         return render(request, 'busqueda_whoosh.html',
-                      {'formulario': formulario, 'peliculas': cxt, 'url': url_string})
+                      {'formulario': formulario, 'peliculas': cxt, 'url': url_string,'datos': datos})
     else:
         formulario = PuntuacionForm()
         valores = ['titulo', 'sipnosis', 'actores', 'director', 'anyo', 'valoracion', 'pais', 'duracion']
