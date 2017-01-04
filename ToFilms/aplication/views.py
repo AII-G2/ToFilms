@@ -16,6 +16,7 @@ def principal(request):
             tituloDePelicula = formulario.cleaned_data['Busqueda']
             message = ""
             peliculas = Pelicula.objects.filter(titulo__contains=tituloDePelicula)
+            numResultados = len(peliculas)
             if len(peliculas) == 0:
                 message = "No se han encontrado resultados"
             # Inicio el paginador
@@ -28,7 +29,7 @@ def principal(request):
                 'paginator': pag
             }
             return render_to_response('peliculas.html',
-                                      {'peliculas': cxt, 'message': message, 'tituloDePelicula': tituloDePelicula})
+                                      {'peliculas': cxt, 'message': message, 'tituloDePelicula': tituloDePelicula, 'numResultados':numResultados})
     else:
         formulario = PeliculaForm()
         numPeliculas = Pelicula.objects.all().count()
@@ -85,6 +86,7 @@ def mostrar_peliculas(request):
         tituloDePelicula = request.GET.get('film')
 
         peliculas = Pelicula.objects.filter(titulo__contains=tituloDePelicula)
+        numResultados = len(peliculas)
     except:
         print("ERROR")
 
@@ -97,7 +99,7 @@ def mostrar_peliculas(request):
         'totPost': peliculas,
         'paginator': pag
     }
-    return render(request, 'peliculas.html', {'peliculas': cxt, 'tituloDePelicula': tituloDePelicula})
+    return render(request, 'peliculas.html', {'peliculas': cxt, 'tituloDePelicula': tituloDePelicula, 'numResultados': numResultados})
 
 
 def item_page(request):
