@@ -52,19 +52,6 @@ def extraer_peliculas(titulo, director, anyo):
         peliculas = soup.findAll("div", "movie-card movie-card-1")
         directorPelicula = ""
         for p in peliculas:
-            #print(p)
-            # print "Poster: " + p.find("div", "mc-poster").img.get('src')
-            # print "Titulo: " + p.find("div", "mc-title").a.string
-            # print "Enlace: http://www.filmaffinity.com" + p.find("div", "mc-title").a.get('href')
-            # print "País: http://www.filmaffinity.com" + p.find("div", "mc-title").img.get('src')
-            # print "Rating: [valoracion = " + p.find("div", "mr-rating").find("div",
-            #                                                                  "avgrat-box").string + ", usuarios = " + \
-            #       p.find("div", "mr-rating").find("div", "ratcount-box").contents[0].string + "]"
-            # print "Director: " + p.find("div", "mc-director").div.span.string
-            # for r in p.find("div", "mc-cast").findAll("span", "nb"):
-            #     # print "Actor: "+r.contents[0].string
-            #     reparto = reparto + ", " + r.contents[0].string
-            # print("Reparto: " + reparto)
             for g in p.find("div", "mc-director").div.findAll("span","nb"):
                 if director!="":
                     directorPelicula = directorPelicula+", "+g.a.get('title')
@@ -120,23 +107,18 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
             if "Fotografía" in p.string:
                 idfotografia = idguion+idmusica+1
         fecha = info_pelicula.find("dd", {"itemprop": "datePublished"}).string
-        #print "Fecha: "+fecha
         try:
             duracion = info_pelicula.find("dd", {"itemprop": "duration"}).string
-            #print "Duracion: "+duracion
         except:
             duracion = ""
         pais = info_pelicula.find("span", {"id": "country-img"}).img.get('title')
-        #print "Pais: "+pais
         for d in info_pelicula.find("dd", "directors").findAll("a"):
             director = director + d.get('title') + ", "
         director = director[0:len(director) - 2]
-        #print "Director: " + director
         try:
             for g in info_pelicula.findAll("div", "credits")[0]:
                 if len(re.findall(r'<span>(.*)</span>', str(g)))>0:
                     guion = guion+" "+re.findall(r'<span>(.*)</span>', str(g))[0].replace("</span>","")
-            #print "Guion: "+guion
         except:
             guion = ""
         if idmusica!=0:
@@ -146,7 +128,6 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
                         musica = musica+" "+re.findall(r'<span>(.*)</span>', str(m))[0].replace("</span>","")
             except:
                 musica=""
-            #print "Musica: "+musica
         if idfotografia!=0:
             try:
                 for f in info_pelicula.findAll("div", "credits")[idfotografia]:
@@ -154,18 +135,14 @@ def extraer_info_peliculas(titulo, link, poster, rating, nvotos):
                         fotografia = fotografia+" "+re.findall(r'<span>(.*)</span>', str(f))[0].replace("</span>","")
             except:
                 fotografia = ""
-            #print "Fotografia: "+fotografia
         for a in info_pelicula.findAll("span", {"itemprop": "name"}):
             actores = actores+a.string+", "
         actores = actores[len(director)+2:len(actores)-2]
-        #print "Reparto: "+actores
         genero = info_pelicula.find("span", {"itemprop": "genre"}).a.string
-        #print "Género: "+genero
         try:
             sipnosis = info_pelicula.find("dd", {"itemprop": "description"}).string
         except:
             sipnosis = ""
-        #print "Sipnosis: "+sipnosis
 
     return [titulo, poster, rating, nvotos, fecha, duracion, pais, director, guion, musica, fotografia, actores, genero, sipnosis]
 
@@ -176,35 +153,29 @@ def extraer_lista(file):
     f.close()
     return l
 
-# torrents = extraer_lista("../ignoredFiles/torrents1.txt")
-# i = 11786
-# printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
-# count = 0
-# f = open("../../ignoredFiles/peliculas", "a")
-# torrentsArray = torrents.splitlines()
-#
-# for t in range(11786,len(torrentsArray)):
-#     time.sleep(5)
-#     # print eval(t)
-#     # print eval(t)[0]
-#     # print eval(t)[4][3:].replace(".","")
-#     # print eval(t)[6][3:]
-#     titulo = eval(torrentsArray[t])[0]
-#     director = eval(torrentsArray[t])[4][3:].replace(".","")
-#     anyo = eval(torrentsArray[t])[6][3:].replace(".","")
-#     try:
-#         extraccion = extraer_peliculas(titulo, director, anyo)
-#         f.write(str(extraccion))
-#         f.write("\n")
-#     except UnboundLocalError:
-#     #     #print eval(t)[0]
-#         count = count + 1
-#     #     #print count
-#     printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
-#     i = i + 1
-#
-# f.close()
-# print(count)
+torrents = extraer_lista("../ignoredFiles/torrents1.txt")
+i = 11786
+printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
+count = 0
+f = open("../../ignoredFiles/peliculas", "a")
+torrentsArray = torrents.splitlines()
+
+for t in range(11786,len(torrentsArray)):
+    time.sleep(5)
+    titulo = eval(torrentsArray[t])[0]
+    director = eval(torrentsArray[t])[4][3:].replace(".","")
+    anyo = eval(torrentsArray[t])[6][3:].replace(".","")
+    try:
+        extraccion = extraer_peliculas(titulo, director, anyo)
+        f.write(str(extraccion))
+        f.write("\n")
+    except UnboundLocalError:
+        count = count + 1
+    printProgress(i, 14165, prefix='Progress:', suffix='Complete', barLength=50)
+    i = i + 1
+
+f.close()
+print(count)
 
 # Eliminación de Películas repetidas y se le añade un torrent por defecto
 
@@ -226,51 +197,51 @@ f.close()
 
 #Se le añaden los link de los torrents a las películas
 
-# torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
-# peliculas = extraer_lista("../ignoredFiles/peliculas1").splitlines()
-# f = open("../ignoredFiles/peliculasFinal", "a")
-# i = 0
-#
-# printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
-# for p in peliculas:
-#     pelicula = eval(p)
-#     torrents = ''
-#     for t in torrentsArray:
-#         torrent = eval(t)
-#         if pelicula[7] in torrent[4][3:].replace(".", "") and pelicula[4] in torrent[6][3:]:
-#             if torrents=='':
-#                 torrents = torrent[len(torrent)-1]
-#             else:
-#                 torrents = torrents+", "+torrent[len(torrent)-1]
-#     pelicula[len(pelicula)-1] = torrents
-#     f.write(str(pelicula))
-#     f.write("\n")
-#     printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
-#     i = i + 1
-# f.close()
+torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
+peliculas = extraer_lista("../ignoredFiles/peliculas1").splitlines()
+f = open("../ignoredFiles/peliculasFinal", "a")
+i = 0
+
+printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+for p in peliculas:
+    pelicula = eval(p)
+    torrents = ''
+    for t in torrentsArray:
+        torrent = eval(t)
+        if pelicula[7] in torrent[4][3:].replace(".", "") and pelicula[4] in torrent[6][3:]:
+            if torrents=='':
+                torrents = torrent[len(torrent)-1]
+            else:
+                torrents = torrents+", "+torrent[len(torrent)-1]
+    pelicula[len(pelicula)-1] = torrents
+    f.write(str(pelicula))
+    f.write("\n")
+    printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+    i = i + 1
+f.close()
 
 #Se crea un fichero con los links de los torrents y su calidad
 
 
-# torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
-# peliculas = extraer_lista("../ignoredFiles/peliculasFinal").splitlines()
-# f = open("../ignoredFiles/torrentsFinal.txt", "a")
-# i = 0
-#
-# printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
-# for p in peliculas:
-#     pelicula = eval(p)
-#     if "," in pelicula[len(pelicula)-1]:
-#         urls = pelicula[len(pelicula)-1].split(",")
-#     else:
-#         urls = [pelicula[len(pelicula)-1]]
-#     for u in urls:
-#         for t in torrentsArray:
-#             torrent = eval(t)
-#             if torrent[len(torrent)-1] in u:
-#                 f.write(str([u,torrent[8]]))
-#                 f.write("\n")
-#                 break
-#     printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
-#     i = i + 1
-# f.close()
+torrentsArray = extraer_lista("../ignoredFiles/torrents.txt").splitlines()
+peliculas = extraer_lista("../ignoredFiles/peliculasFinal").splitlines()
+f = open("../ignoredFiles/torrentsFinal.txt", "a")
+i = 0
+
+printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+for p in peliculas:
+    pelicula = eval(p)
+    if "," in pelicula[len(pelicula)-1]:
+        urls = pelicula[len(pelicula)-1].split(",")
+    else:
+        urls = [pelicula[len(pelicula)-1]]
+    for u in urls:
+        for t in torrentsArray:
+            torrent = eval(t)
+            if torrent[len(torrent)-1] in u:
+                f.write(str([u,torrent[8]]))
+                f.write("\n")
+                break
+    printProgress(i, 8524, prefix='Progress:', suffix='Complete', barLength=50)
+    i = i + 1
+f.close()
